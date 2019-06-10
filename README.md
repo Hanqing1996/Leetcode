@@ -14,6 +14,7 @@
 #### 查找
 * 二分查找：O(logn)
 ### 二分查找
+1.关键字特征（A[mid]>A[mid-1]&&A[mid]<A[mid+1]）
 ```
 //一般二分查找函数，要求L有序（递增，递减），查找符合关键字的数组元素下标
 int Binary_search(SqList L,ElemType key)
