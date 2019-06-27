@@ -52,7 +52,7 @@ int main()
 {
 	int a=1;
 	int* p=&a;//让指针p指向了内存地址为a所在地址的内存区域;
-    change(p);
+        change(p);
 	printf("%d\n",a);
 	return 0;
 }
@@ -64,3 +64,4 @@ int main()
 3. 递归函数中计数器（引用）的用法详见[230. 二叉搜索树中第K小的元素](https://github.com/Hanqing1996/Leetocde/blob/master/230.%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACK%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0.cpp)
 
 
+ 
