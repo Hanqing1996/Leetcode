@@ -63,5 +63,8 @@ int main()
 2. 需要它出来->设为全局变量，递归函数不含该参数
 3. 递归函数中计数器（引用）的用法详见[230. 二叉搜索树中第K小的元素](https://github.com/Hanqing1996/Leetocde/blob/master/230.%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACK%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0.cpp)
 
+#### 空间复杂度
+
+
 
  
