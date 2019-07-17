@@ -1,5 +1,17 @@
+public String findLongestWord(String s, List<String> d) {
+    String longestWord = "";
+    for (String target : d) {
+        int l1 = longestWord.length(), l2 = target.length();
+        if (l1 > l2 || (l1 == l2 && longestWord.compareTo(target) < 0)) {
+            continue;
+        }
+        if (isSubstr(s, target)) {
+            longestWord = target;
+        }
+    }
+    return longestWord;
+}
 
-//判断能否通过删除s的部分字符得到target
 private boolean isSubstr(String s, String target) {
     int i = 0, j = 0;
     while (i < s.length() && j < target.length()) {
