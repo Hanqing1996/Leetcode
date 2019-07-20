@@ -1,3 +1,18 @@
+#### 分类
+* 二分查找 
+> 
+* 双指针
+>
+* 链表
+>
+* 树
+>
+* 贪心
+>
+
+
+
+
 [执行出错：AddressSanitizer](https://blog.csdn.net/lym940928/article/details/89678727)
 
 #### 关于二叉搜索树的遍历
