@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& numbers, int target) {
-        //利用二分查找符合要求的index1,index2;
+        //利用双指针找符合要求的index1,index2;
         int index1=0,index2=numbers.size()-1;
         while(index1<index2)
         {
