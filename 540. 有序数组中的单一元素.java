@@ -1,16 +1,31 @@
-// index必然是一个偶数
-public int singleNonDuplicate(int[] nums) {
-    int l = 0, h = nums.length - 1;
-    while (l < h) {
-        int m = l + (h - l) / 2;
-        if (m % 2 == 1) {
-            m--;   // 保证 l/h/m 都在偶数位，使得查找区间大小一直都是奇数
+class Solution {
+    
+    // 要找的元素在数组中下标必然为偶数
+    public int singleNonDuplicate(int[] nums) {
+        int left=0,right=nums.length-1,mid=0,sum;//注意nums.length必然为奇数
+        while(left<right)
+        {
+            sum=left+right;
+            if(sum%2==0)
+                mid=sum/2;
+            else
+            {
+                if(nums[mid]==nums[mid-1])
+                    mid=mid+1;  
+                else if(nums[mid]==nums[mid+1])
+                    mid=mid-1;
+                else
+                    break;
+            }
+                
+            if(nums[mid]==nums[mid-1])
+                right=mid-2;
+            else if(nums[mid]==nums[mid+1])
+                left=mid+2;
+            else
+                break;
+            
         }
-        if (nums[m] == nums[m + 1]) {
-            l = m + 2;
-        } else {
-            h = m;
-        }
+        return nums[mid];
     }
-    return nums[l];
 }
