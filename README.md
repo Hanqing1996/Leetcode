@@ -12,6 +12,7 @@
 * [540. 有序数组中的单一元素](https://github.com/Hanqing1996/Leetocde/blob/master/540.%20%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%8D%95%E4%B8%80%E5%85%83%E7%B4%A0.java)
 * [69. x 的平方根](https://github.com/Hanqing1996/Leetocde/blob/master/69.%20x%20%E7%9A%84%E5%B9%B3%E6%96%B9%E6%A0%B9.cpp)
 * [278. 第一个错误的版本](https://github.com/Hanqing1996/Leetocde/blob/master/278.%20%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%94%99%E8%AF%AF%E7%9A%84%E7%89%88%E6%9C%AC.cpp)
+* [153. 寻找旋转排序数组中的最小值](https://github.com/Hanqing1996/Leetocde/blob/master/153.%20%E5%AF%BB%E6%89%BE%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E5%80%BC.cpp)
 #### 双指针
 * [167. 两数之和 II - 输入有序数组](https://github.com/Hanqing1996/Leetocde/blob/master/167.%20%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%20II%20-%20%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84.cpp)
 * [345. 反转字符串中的元音字母](https://github.com/Hanqing1996/Leetocde/blob/master/345.%20%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E6%AF%8D.cpp)
