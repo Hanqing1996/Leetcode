@@ -6,17 +6,29 @@
  *     ListNode(int x) { val = x; }
  * }
  */
-public ListNode deleteDuplicates(ListNode head) {
-    ListNode current = head,nextTmp;
-    while (current != null && current.next != null) {
-        nextTmp=current.next;
-        if (current.next.val == current.val) {
-            current.next = current.next.next;
-            nextTmp.next=null;
-            // current=current.next; //可能存在连续重复的情况，因此不可以移动current指针
-        } else {
-            current = current.next;
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        
+        ListNode cur=head;
+        
+        // 链表为空
+        if(cur==null)
+            return head;
+        
+        // cur.next=null时不做处理
+        while(cur.next!=null)
+        {
+            // 更新nextTmp位置,保证nextTmp不为空
+            ListNode nextTmp=cur.next;
+            
+            // 节点删除
+            if(cur.val == nextTmp.val){
+                cur.next=nextTmp.next; // 注意nextTmp.next容许为空
+                nextTmp.next=null;
+            }
+            else
+                cur=cur.next;   
         }
+        return head;
     }
-    return head;
 }
