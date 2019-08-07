@@ -30,11 +30,43 @@
 * [3. 无重复字符的最长子串](https://github.com/Hanqing1996/Leetocde/blob/master/3.%20%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2.cpp)
 #### 链表
 > 假设头节点不为空节点
+```
+// 24. 两两交换链表中的节点
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+
+        
+        ListNode dummy=new ListNode(0);
+        dummy.next=head;
+        
+        ListNode first=dummy;
+        
+        // first.next=null表示剩余0个节点;first.next.next=null表示剩余1个节点，这两种情况不做处理
+        while(first.next!=null&&first.next.next!=null) 
+        {
+            // 更新second,nextTmp位置,保证second,nextTmp不为空
+            ListNode second=first.next;
+            ListNode nextTmp=second.next;
+            
+            // 节点交换
+            second.next=nextTmp.next;// 注意nextTmp.next为null时交换也在进行
+            first.next=nextTmp;
+            nextTmp.next=second;
+            
+            // 更新first位置,first可能为空
+            first=nextTmp.next;
+        }
+        head=dummy.next;
+        return head;
+    }
+}
+```
 * [141. 环形链表](https://github.com/Hanqing1996/Leetocde/blob/master/141.%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8.cpp)
 * [2. 两数相加](https://github.com/Hanqing1996/Leetocde/blob/master/2%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0.java)
 * [206. 反转链表](https://github.com/Hanqing1996/Leetocde/blob/master/206.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.java)
 * [21. 合并两个有序链表](https://github.com/Hanqing1996/Leetocde/blob/master/21.%20%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8.java)
 * [83. 删除排序链表中的重复元素](https://github.com/Hanqing1996/Leetocde/blob/master/83.%20%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0.java)
+* [24. 两两交换链表中的节点](https://github.com/Hanqing1996/Leetocde/blob/master/24.%20%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9.java)
 #### 树
 * [230. 二叉搜索树中第K小的元素](https://github.com/Hanqing1996/Leetocde/blob/master/230.%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACK%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0.cpp)
 
