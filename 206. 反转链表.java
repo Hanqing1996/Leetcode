@@ -8,14 +8,29 @@
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-        ListNode cur=head,pre=null,nextTmp;
-        while(cur!=null)
+        
+        // 链表为空
+        if(head==null)
+            return head;
+        
+        // 哑节点,避免更新头节点的位置
+        ListNode dummy=new ListNode(0);
+        dummy.next=head;
+        
+        ListNode second=dummy.next;
+        
+        while(second.next!=null)
         {
-            nextTmp=cur.next;
-            cur.next=pre;
-            pre=cur;
-            cur=nextTmp;
+            // 更新first位置
+            ListNode first=second.next;
+            
+            // 将first插入至dummy后
+            second.next=first.next;
+            first.next=dummy.next;
+            dummy.next=first;
         }
-        return pre;
+        
+        head=dummy.next;
+        return head;
     }
 }
