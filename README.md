@@ -29,7 +29,7 @@
 * [121. 买卖股票的最佳时机](https://github.com/Hanqing1996/Leetocde/blob/master/121%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA.java)
 * [3. 无重复字符的最长子串](https://github.com/Hanqing1996/Leetocde/blob/master/3.%20%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2.cpp)
 #### 链表
-> 假设头节点不为空节点
+> 注意链表为空的情况
 ```
 // 24. 两两交换链表中的节点
 class Solution {
