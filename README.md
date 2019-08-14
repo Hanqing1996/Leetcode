@@ -29,7 +29,7 @@
 * [121. 买卖股票的最佳时机](https://github.com/Hanqing1996/Leetocde/blob/master/121%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA.java)
 * [3. 无重复字符的最长子串](https://github.com/Hanqing1996/Leetocde/blob/master/3.%20%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2.cpp)
 #### 链表
-> 注意链表为空的情况
+> 当心空指针
 ```
 // 24. 两两交换链表中的节点
 class Solution {
@@ -70,10 +70,9 @@ class Solution {
 * [445. 两数相加 II](https://github.com/Hanqing1996/Leetocde/blob/master/445.%20%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0%20II.java)
 * [234. 回文链表](https://github.com/Hanqing1996/Leetocde/blob/master/234.%20%E5%9B%9E%E6%96%87%E9%93%BE%E8%A1%A8.java)
 * [725. 分隔链表](https://github.com/Hanqing1996/Leetocde/blob/master/725.%20%E5%88%86%E9%9A%94%E9%93%BE%E8%A1%A8.java)
+* [328. 奇偶链表](https://github.com/Hanqing1996/Leetocde/blob/master/328.%20%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8.java)
 #### 树
 * [230. 二叉搜索树中第K小的元素](https://github.com/Hanqing1996/Leetocde/blob/master/230.%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACK%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0.cpp)
-
-
 
 
 
