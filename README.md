@@ -73,6 +73,7 @@ class Solution {
 * [328. 奇偶链表](https://github.com/Hanqing1996/Leetocde/blob/master/328.%20%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8.java)
 #### 树
 * [230. 二叉搜索树中第K小的元素](https://github.com/Hanqing1996/Leetocde/blob/master/230.%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACK%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0.cpp)
+* [104. 二叉树的最大深度](https://github.com/Hanqing1996/Leetocde/blob/master/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6.java)
 
 
 
