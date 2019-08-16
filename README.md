@@ -75,6 +75,16 @@ class Solution {
 * [230. 二叉搜索树中第K小的元素](https://github.com/Hanqing1996/Leetocde/blob/master/230.%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACK%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0.cpp)
 * [104. 二叉树的最大深度](https://github.com/Hanqing1996/Leetocde/blob/master/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6.java)
 
+#### 递归
+1. 什么情况不需要递归（直接返回某个值）
+2. 一个结构，包含已处理的，未处理的（不考虑边界情况）,其中已处理的形式为 circle(底/后)
+
+自底向上：树
+自后向前：链表
+
+3. 这层要做什么
+4. 这层要返回什么
+
 
 
 [执行出错：AddressSanitizer](https://blog.csdn.net/lym940928/article/details/89678727)
