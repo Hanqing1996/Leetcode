@@ -6,6 +6,10 @@
  *     ListNode(int x) { val = x; }
  * }
  */
+
+/**
+ * 迭代
+ */
 class Solution {
     public ListNode swapPairs(ListNode head) {
 
@@ -27,10 +31,49 @@ class Solution {
             first.next=nextTmp;
             nextTmp.next=second;
             
-            // 更新first位置,first可能为空
+            // 更新first位置,first不可能为空
             first=nextTmp.next;
         }
         head=dummy.next;
         return head;
+    }
+}
+
+
+/**
+ * 递归
+ */
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        
+        ListNode dummy=new ListNode(0);
+        dummy.next=head;
+        
+        ListNode first=dummy;
+
+        return swap(first,dummy); // 与while条件一致
+
+    }
+
+    private ListNode swap(ListNode first,ListNode dummy){
+
+        if(first.next==null||first.next.next==null){
+            return dummy.next;
+        }
+        
+        // 更新second,nextTmp位置,保证second,nextTmp不为空
+        ListNode second=first.next;
+        ListNode nextTmp=second.next;
+
+        // 节点交换
+        second.next=nextTmp.next;// 注意nextTmp.next为null时交换也在进行
+        first.next=nextTmp;
+        nextTmp.next=second;
+        
+        // 更新first位置,first可能为空
+        first=nextTmp.next;
+
+        return swap(first,dummy); // 与while条件一致
+
     }
 }
