@@ -76,16 +76,7 @@ class Solution {
 * [104. 二叉树的最大深度](https://github.com/Hanqing1996/Leetocde/blob/master/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6.java)
 
 #### 递归
-1. 什么情况不需要递归（直接返回某个值）
-2. 一个结构，包含已处理的，未处理的（不考虑边界情况）,其中已处理的形式为 circle(底/后)
-
-自底向上：树
-自后向前：链表
-
-3. 这层要做什么
-4. 这层要返回什么
-
-
+* [206. 反转链表](https://github.com/Hanqing1996/Leetocde/blob/master/206.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.java)
 
 [执行出错：AddressSanitizer](https://blog.csdn.net/lym940928/article/details/89678727)
 
