@@ -79,13 +79,18 @@ class Solution {
 * [328. 奇偶链表](https://github.com/Hanqing1996/Leetocde/blob/master/328.%20%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8.java)
 #### 树
 * [230. 二叉搜索树中第K小的元素](https://github.com/Hanqing1996/Leetocde/blob/master/230.%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%AC%ACK%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0.cpp)
-* [104. 二叉树的最大深度](https://github.com/Hanqing1996/Leetocde/blob/master/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6.java)
+* [104. 二叉树的最大深度](https://github.com/Hanqing1996/Leetocde/blob/master/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6)
 
-#### 递归
+#### 链表的递归
 * [206. 反转链表](https://github.com/Hanqing1996/Leetocde/blob/master/206.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8.java)
 * [24. 两两交换链表中的节点](https://github.com/Hanqing1996/Leetocde/blob/master/24.%20%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9.java)
 * [83. 删除排序链表中的重复元素](https://github.com/Hanqing1996/Leetocde/blob/master/83.%20%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0.java)
 * [328. 奇偶链表](https://github.com/Hanqing1996/Leetocde/blob/master/328.%20%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8.java)
+
+#### 树的递归
+[递归detail](https://www.jianshu.com/p/a33b420d660d)
+* [104. 二叉树的最大深度](https://github.com/Hanqing1996/Leetocde/blob/master/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6)
+* [100. 相同的树](https://github.com/Hanqing1996/Leetocde/blob/master/100.%20%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91.java)
 
 [执行出错：AddressSanitizer](https://blog.csdn.net/lym940928/article/details/89678727)
 
