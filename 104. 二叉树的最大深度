@@ -1,0 +1,36 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+
+/**
+ * 基于先序遍历的递归
+ */
+class Solution {
+    
+    public int currentMaxdepth=0;
+    
+    public int maxDepth(TreeNode root) {
+        
+        getmaxDepth(root,0);
+        
+        return currentMaxdepth;
+        
+    }
+    
+    private void getmaxDepth(TreeNode root,int depth){
+        if(root!=null)
+        {
+            depth+=1;
+            currentMaxdepth=Math.max(currentMaxdepth,depth);
+            
+            getmaxDepth(root.left,depth);
+            getmaxDepth(root.right,depth);
+        }
+    }
+}
