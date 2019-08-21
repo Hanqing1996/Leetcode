@@ -89,8 +89,11 @@ class Solution {
 
 #### 树的递归
 [递归detail](https://www.jianshu.com/p/a33b420d660d)
-* 返回boolean的递归函数
+* [100 相同的树](https://github.com/Hanqing1996/Leetocde/blob/master/100.%20%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91.java)
 ```
+/**
+ * boolean类型的递归函数
+ */
 private boolean preorder(TreeNode p, TreeNode q){
         if(p!=null&&q!=null)
         {
@@ -105,8 +108,40 @@ private boolean preorder(TreeNode p, TreeNode q){
             return true;
     }
 ```
-* [104. 二叉树的最大深度](https://github.com/Hanqing1996/Leetocde/blob/master/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6)
-* [100. 相同的树](https://github.com/Hanqing1996/Leetocde/blob/master/100.%20%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91.java)
+* [110 平衡二叉树]() 
+```
+class Solution {
+    
+    public boolean bal=true;
+    public boolean isBalanced(TreeNode root) {
+        
+        balance(root);
+        
+        return bal;
+    }
+    
+    /**
+     * 自下向上
+     */
+    private int balance(TreeNode p){
+        
+        if(p!=null&&bal){
+            int left_depth=balance(p.left);
+            int right_depth=balance(p.right);
+            
+            if(Math.abs(left_depth-right_depth)>1){
+                bal=false;
+                return 0; // 这里return什么根本不重要
+            }
+            else
+                return Math.max(left_depth,right_depth)+1;
+        }
+        else
+            return 0;
+    }   
+}
+```
+* [104. 二叉树的最大深度(自上向下)](https://github.com/Hanqing1996/Leetocde/blob/master/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6)
 * [101. 对称二叉树](https://github.com/Hanqing1996/Leetocde/blob/master/101.%20%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91.java)
 
 [执行出错：AddressSanitizer](https://blog.csdn.net/lym940928/article/details/89678727)
