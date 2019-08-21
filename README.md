@@ -89,6 +89,22 @@ class Solution {
 
 #### 树的递归
 [递归detail](https://www.jianshu.com/p/a33b420d660d)
+* 返回boolean的递归函数
+```
+private boolean preorder(TreeNode p, TreeNode q){
+        if(p!=null&&q!=null)
+        {
+            if(p.val!=q.val)
+                return false;
+            else
+                return preorder(p.left,q.left)&&preorder(p.right,q.right);
+        }
+        else if((p!=null&&q==null)||(p==null&&q!=null))
+            return false;
+        else
+            return true;
+    }
+```
 * [104. 二叉树的最大深度](https://github.com/Hanqing1996/Leetocde/blob/master/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6)
 * [100. 相同的树](https://github.com/Hanqing1996/Leetocde/blob/master/100.%20%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91.java)
 * [101. 对称二叉树](https://github.com/Hanqing1996/Leetocde/blob/master/101.%20%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91.java)
