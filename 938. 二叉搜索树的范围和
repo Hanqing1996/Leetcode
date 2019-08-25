@@ -1,0 +1,46 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    
+    public int sum=0;
+    public boolean ifCalculate=false,end=false;
+    public int rangeSumBST(TreeNode root, int L, int R) {
+        
+        rangeSum(root,L,R);
+        return sum;
+        
+    }
+    /**
+     * 中序遍历，所有对root.val的判断都要放在中间
+     */
+    private void rangeSum(TreeNode root, int L, int R){
+        
+        if(root!=null&&end==false){
+           
+            rangeSumBST(root.left,L,R);
+            
+             // 开始计算
+            if(root.val==L) ifCalculate=true;
+            
+            // 停止计算，停止遍历
+            if(root.val==R){
+                ifCalculate=false;
+                end=true;
+                sum+=root.val; 
+            } 
+            
+            if(ifCalculate) sum+=root.val;
+
+            rangeSumBST(root.right,L,R); 
+        }
+    
+    }
+    
+}
