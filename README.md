@@ -141,6 +141,30 @@ class Solution {
     }   
 }
 ```
+* [617. 合并二叉树](https://github.com/Hanqing1996/Leetocde/blob/master/617.%20%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91.java)
+```
+class Solution {
+    
+    // 返回类型为TreeNode的递归函数
+    public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
+        
+        if(t1!=null&&t2!=null){
+            t1.val+=t2.val;
+            
+            t1.left=merge(t1.left,t2.left);
+            t1.right=merge(t1.right,t2.right);
+
+            return t1; // 这一句会多次执行
+        }
+        else if(t1==null&&t2!=null){
+            return t2;
+        }
+        else
+            return t1;
+    }
+    
+}
+```
 * [104. 二叉树的最大深度(自上向下)](https://github.com/Hanqing1996/Leetocde/blob/master/104.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6)
 * [111. 二叉树的最小深度(自上向下)](https://github.com/Hanqing1996/Leetocde/blob/master/111.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6.java)
 * [101. 对称二叉树](https://github.com/Hanqing1996/Leetocde/blob/master/101.%20%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91.java)
