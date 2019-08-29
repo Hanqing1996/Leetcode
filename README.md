@@ -89,6 +89,8 @@ class Solution {
 
 #### 树的递归
 [递归detail](https://www.jianshu.com/p/a33b420d660d)
+* 这条路径可以经过也可以不经过根节点：可以用两次遍历
+* 只能从父节点到子节点/子树：不可以用两次遍历
 * 先序/中序/后序不重要
 * [100 相同的树](https://github.com/Hanqing1996/Leetocde/blob/master/100.%20%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91.java)
 ```
