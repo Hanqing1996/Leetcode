@@ -186,6 +186,7 @@ class Solution {
 * [572. 另一个树的子树(两次遍历,与100相似)](https://github.com/Hanqing1996/Leetocde/blob/master/572.%20%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%A0%91%E7%9A%84%E5%AD%90%E6%A0%91.java)
 * [404. 左叶子之和](https://github.com/Hanqing1996/Leetocde/blob/master/404.%20%E5%B7%A6%E5%8F%B6%E5%AD%90%E4%B9%8B%E5%92%8C.java)
 * [687. 最长同值路径](https://github.com/Hanqing1996/Leetocde/blob/master/687.%20%E6%9C%80%E9%95%BF%E5%90%8C%E5%80%BC%E8%B7%AF%E5%BE%84.java)
+* [671. 二叉树中第二小的节点](https://github.com/Hanqing1996/Leetocde/blob/master/671.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%AC%AC%E4%BA%8C%E5%B0%8F%E7%9A%84%E8%8A%82%E7%82%B9.java)
 
 [执行出错：AddressSanitizer](https://blog.csdn.net/lym940928/article/details/89678727)
 
