@@ -14,8 +14,8 @@ class Solution {
         if(t1!=null&&t2!=null){
             t1.val+=t2.val;
             
-            t1.left=merge(t1.left,t2.left);
-            t1.right=merge(t1.right,t2.right);
+            t1.left=mergeTrees(t1.left,t2.left);
+            t1.right=mergeTrees(t1.right,t2.right);
 
             return t1; // 这一句会多次执行
         }
