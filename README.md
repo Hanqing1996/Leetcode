@@ -87,7 +87,7 @@ class Solution {
 * [83. 删除排序链表中的重复元素](https://github.com/Hanqing1996/Leetocde/blob/master/83.%20%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0.java)
 * [328. 奇偶链表](https://github.com/Hanqing1996/Leetocde/blob/master/328.%20%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8.java)
 
-#### 树的递归
+#### 二叉树(递归)
 [递归detail](https://www.jianshu.com/p/a33b420d660d)
 * 
 1. 只能从父节点到子节点/子树(437,)：可以用两次遍历
