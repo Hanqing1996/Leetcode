@@ -193,6 +193,7 @@ class Solution {
 * [687. 最长同值路径](https://github.com/Hanqing1996/Leetocde/blob/master/687.%20%E6%9C%80%E9%95%BF%E5%90%8C%E5%80%BC%E8%B7%AF%E5%BE%84.java)
 * [671. 二叉树中第二小的节点](https://github.com/Hanqing1996/Leetocde/blob/master/671.%20%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E7%AC%AC%E4%BA%8C%E5%B0%8F%E7%9A%84%E8%8A%82%E7%82%B9.java)
 * [965. 单值二叉树](https://github.com/Hanqing1996/Leetocde/blob/master/965.%20%E5%8D%95%E5%80%BC%E4%BA%8C%E5%8F%89%E6%A0%91.java)
+* [129. 求根到叶子节点数字之和](https://github.com/Hanqing1996/Leetocde/blob/master/129.%20%E6%B1%82%E6%A0%B9%E5%88%B0%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E6%95%B0%E5%AD%97%E4%B9%8B%E5%92%8C)
 
 #### 二叉搜索树
 * [669 修剪二叉搜索树(返回类型为TreeNode的递归函数)](https://github.com/Hanqing1996/Leetocde/blob/master/669.%20%E4%BF%AE%E5%89%AA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.java)
