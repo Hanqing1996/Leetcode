@@ -221,6 +221,7 @@ class Solution {
 }
 ```
 * [783. 二叉搜索树结点最小距离(中序遍历，记录序列相邻节点)](https://github.com/Hanqing1996/Leetocde/blob/master/783.%20%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%BB%93%E7%82%B9%E6%9C%80%E5%B0%8F%E8%B7%9D%E7%A6%BB(%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E8%AE%B0%E5%BD%95%E5%BA%8F%E5%88%97%E7%9B%B8%E9%82%BB%E8%8A%82%E7%82%B9).java)
+* [98. 验证二叉搜索树(中序遍历，记录序列相邻节点)](https://github.com/Hanqing1996/Leetocde/blob/master/98.%20%E9%AA%8C%E8%AF%81%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.java)
 
 [执行出错：AddressSanitizer](https://blog.csdn.net/lym940928/article/details/89678727)
 
