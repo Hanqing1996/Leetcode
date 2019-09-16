@@ -238,6 +238,21 @@ class Solution {
 ***
 
 #### DP
+* 连续
+```
+if(A[i]==B[j]){
+    dp[i][j]=dp[i-1][j-1]+1;
+}
+else{
+    dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
+}
+```
+* 不连续
+```
+if(A[i]==B[j]){
+    dp[i][j]=dp[i-1][j-1]+1;
+}
+```
 * [300. 最长上升子序列(不连续)](https://github.com/Hanqing1996/Leetocde/blob/master/300.%20%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97.cpp)
 * [53. 最大子序和(连续)](https://github.com/Hanqing1996/Leetocde/blob/master/53.%20%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C.cpp)
 
