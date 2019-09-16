@@ -238,7 +238,8 @@ class Solution {
 ***
 
 #### DP
-* [300. 最长上升子序列](https://github.com/Hanqing1996/Leetocde/blob/master/300.%20%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97.java)
+* [300. 最长上升子序列(不连续)](https://github.com/Hanqing1996/Leetocde/blob/master/300.%20%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97.java)
+* [53. 最大子序和(连续)](https://github.com/Hanqing1996/Leetocde/blob/master/53.%20%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C.cpp)
 
 #### 关于指针
 * 指针的用法
