@@ -238,7 +238,7 @@ class Solution {
 ***
 
 #### DP
-* 连续
+* 不连续
 ```
 if(A[i]==B[j]){
     dp[i][j]=dp[i-1][j-1]+1;
@@ -247,7 +247,7 @@ else{
     dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
 }
 ```
-* 不连续
+* 连续
 ```
 if(A[i]==B[j]){
     dp[i][j]=dp[i-1][j-1]+1;
