@@ -247,6 +247,14 @@ else{
     dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
 }
 ```
+比如
+```
+对于
+[2,6,7,4,1,8],
+[4,3,2,7,5,4]
+不连续:有dp[1][2]=max(dp[0][2],dp[1][1])=1;则dp[2][3]=dp[1][2]+1=2
+连续:dp[2][3]=dp[1][2]+1=0+1=1
+```
 * 连续
 ```
 if(A[i]==B[j]){
@@ -255,6 +263,7 @@ if(A[i]==B[j]){
 ```
 * [300. 最长上升子序列(不连续)](https://github.com/Hanqing1996/Leetocde/blob/master/300.%20%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97.cpp)
 * [53. 最大子序和(连续)](https://github.com/Hanqing1996/Leetocde/blob/master/53.%20%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C.cpp)
+* [718. 最长重复子数组(连续)](https://github.com/Hanqing1996/Leetocde/blob/master/718.%20%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E6%95%B0%E7%BB%84.java)
 
 #### 关于指针
 * 指针的用法
