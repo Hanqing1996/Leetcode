@@ -265,7 +265,8 @@ if(A[i]==B[j]){
 * [53. 最大子序和(连续)](https://github.com/Hanqing1996/Leetocde/blob/master/53.%20%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C.cpp)
 * [718. 最长重复子数组(连续)](https://github.com/Hanqing1996/Leetocde/blob/master/718.%20%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E6%95%B0%E7%BB%84.java)
 * [70. 爬楼梯(斐波那切数列)](https://github.com/Hanqing1996/Leetocde/blob/master/70.%20%E7%88%AC%E6%A5%BC%E6%A2%AF.cpp)
-* [62. 不同路径](https://github.com/Hanqing1996/Leetocde/blob/master/62.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84.cpp)
+* [62. 不同路径](https://github.com/Hanqing1996/Leetocde/blob/master/62.%20%E4%B8%8D%E5%90%8C%E8%B7%AF%E5%BE%84.cpp) 
+* [64. 最小路径和](https://github.com/Hanqing1996/Leetocde/blob/master/64.%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C.cpp)
 
 #### 观察规律
 ```
