@@ -1,5 +1,16 @@
 [coding地址](https://coding.net/u/usx15237/p/LeetCode/git)
 
+#### 最值
+* java
+```
+Integer.MAX_VALUE
+Integer.MIN_VALUE
+```
+* c++
+```
+INT_MIN
+INT_MAX
+```
 #### 排序
 * [215. 数组中的第K个最大元素](https://github.com/Hanqing1996/Leetocde/blob/master/215.%20%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0.Java)
 * 
