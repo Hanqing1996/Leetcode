@@ -99,11 +99,10 @@ class Solution {
 * [328. 奇偶链表](https://github.com/Hanqing1996/Leetocde/blob/master/328.%20%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8.java)
 
 #### 二叉树(递归)
-[递归detail](https://www.jianshu.com/p/a33b420d660d)
-* 
+* [递归detail](https://www.jianshu.com/p/a33b420d660d)
 1. 只能从父节点到子节点/子树(437,)：可以用两次遍历
 2. 这条路径可以经过也可以不经过根节点(124,687,543)：将“求经过该根节点的，满足题目要求的路径”转化为“根节点的left单向路径+根节点的right单向路径=满足题目要求的路径”
-3. 注意两次遍历的效率是很低的，很暴力，没有优化
+3. 注意两次遍历要求第二次遍历不能是有选择的，不确定的(比如337就不能用二次遍历)。而且两次遍历的效率是很低的，很暴力，没有优化。
 ```
 path(root.left) 
 ...
@@ -280,6 +279,7 @@ if(A[i]==B[j]){
 * [64. 最小路径和](https://github.com/Hanqing1996/Leetocde/blob/master/64.%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C.cpp)
 * [198. 打家劫舍](https://github.com/Hanqing1996/Leetocde/blob/master/198.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D.cpp)
 * [213. 打家劫舍 II](https://github.com/Hanqing1996/Leetocde/blob/master/213.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%20II.cpp)
+* [337. 打家劫舍 III(树形dp)](https://github.com/Hanqing1996/Leetocde/blob/master/337.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%20III.cpp)
 
 #### 观察规律
 ```
