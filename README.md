@@ -281,6 +281,36 @@ if(A[i]==B[j]){
 * [213. 打家劫舍 II](https://github.com/Hanqing1996/Leetocde/blob/master/213.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%20II.cpp)
 * [337. 打家劫舍 III(树形dp)](https://github.com/Hanqing1996/Leetocde/blob/master/337.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%20III.cpp)
 
+#### 树形dp
+* 整体观(337)
+```
+     3
+    / \
+   2   7
+    \   \ 
+     6   1
+ ```
+ 1. 正确思路:看作(节点3+以2为根节点的左子树+以7为根节点的左子树
+如果我们取3，那么左子树root.left 和 右子树root.right我们都不能取了；如果我们不取，那么最大值来自于左右子树的和，也就是3.left+3.right。但是对于左右子树来说，又涉及到了上面的问题，我们是取还是不取呢？这样循环递推下去，直到节点为null，我们直接返回0即可。那么我们对于每个节点，都要设计一个结构来描述取和不取这样的操作
+2. 错误思路:看作(节点3+节点2+节点7)
+如果3取，则2，7不能取。然后呢?6,7要不要取呢?感觉好复杂
+```
+class Solution {
+    public int rob(TreeNode root) {
+        return robCurrentNode(1, root);
+    }
+    public int robCurrentNode(int flag, TreeNode root) {
+        if (root == null) return 0;
+
+        // 如果当前节点可以偷,return 偷左右子树的情况下.max(不偷当前节点,偷当前节点)
+        if (flag == 1) return Math.max(robCurrentNode(1, root.left)+robCurrentNode(1, root.right), robCurrentNode(0, root.left)+robCurrentNode(0, root.right)+root.val);
+
+        // 如果当前节点不可以偷,return  偷左右子树.不偷当前节点
+        else return robCurrentNode(1, root.left)+robCurrentNode(1, root.right);
+    }
+}
+```
+
 #### 观察规律
 ```
 * [122. 买卖股票的最佳时机 II](https://github.com/Hanqing1996/Leetocde/blob/master/122.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20II.java)
