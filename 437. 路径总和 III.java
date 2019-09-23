@@ -45,3 +45,31 @@ class Solution {
     }
  
 }
+
+/**
+ * 树形dp
+ */
+class Solution {
+    
+    public int requireSum;
+    public int pathSum(TreeNode root, int sum) {
+        requireSum=sum;
+        
+    }
+    
+    public void sumCurrentNode(TreeNode root){
+        if(root==null) return 0;
+        
+        if(currentSum==requireSum)
+        
+        
+        return sumCurrentNode(root.left)+root.val
+            
+        sumCurrentNode(root.right)+root.val;    
+        
+        sumCurrentNode(root.left)
+            
+        sumCurrentNode(root.right)    
+            
+    }
+}
