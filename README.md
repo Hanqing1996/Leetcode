@@ -279,10 +279,9 @@ if(A[i]==B[j]){
 * [64. 最小路径和](https://github.com/Hanqing1996/Leetocde/blob/master/64.%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C.cpp)
 * [198. 打家劫舍](https://github.com/Hanqing1996/Leetocde/blob/master/198.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D.cpp)
 * [213. 打家劫舍 II](https://github.com/Hanqing1996/Leetocde/blob/master/213.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%20II.cpp)
-* [337. 打家劫舍 III(树形dp)](https://github.com/Hanqing1996/Leetocde/blob/master/337.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%20III.cpp)
 
 #### 树形dp
-* 整体观([337. 打家劫舍 III](https://github.com/Hanqing1996/Leetocde/blob/master/337.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%20III.java)
+* 整体观([337. 打家劫舍 III](https://github.com/Hanqing1996/Leetocde/blob/master/337.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%20III.java))
 ```
      3
     / \
@@ -297,6 +296,8 @@ if(A[i]==B[j]){
 ```
 class Solution {
     public int rob(TreeNode root) {
+    
+        // 一开始是可以偷的，所以flag=1
         return robCurrentNode(1, root);
     }
     public int robCurrentNode(int flag, TreeNode root) {
