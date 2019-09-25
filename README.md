@@ -280,6 +280,7 @@ if(A[i]==B[j]){
 * [198. 打家劫舍](https://github.com/Hanqing1996/Leetocde/blob/master/198.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D.cpp)
 * [213. 打家劫舍 II](https://github.com/Hanqing1996/Leetocde/blob/master/213.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%20II.cpp)
 * [303. 区域和检索 - 数组不可变](https://github.com/Hanqing1996/Leetocde/blob/master/303.%20%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2%20-%20%E6%95%B0%E7%BB%84%E4%B8%8D%E5%8F%AF%E5%8F%98)
+* [392. 判断子序列](https://github.com/Hanqing1996/Leetocde/blob/master/392.%20%E5%88%A4%E6%96%AD%E5%AD%90%E5%BA%8F%E5%88%97.cpp)
 
 #### 树形dp
 * 整体观([337. 打家劫舍 III](https://github.com/Hanqing1996/Leetocde/blob/master/337.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%20III.java))
