@@ -279,6 +279,7 @@ if(A[i]==B[j]){
 * [64. 最小路径和](https://github.com/Hanqing1996/Leetocde/blob/master/64.%20%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C.cpp)
 * [198. 打家劫舍](https://github.com/Hanqing1996/Leetocde/blob/master/198.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D.cpp)
 * [213. 打家劫舍 II](https://github.com/Hanqing1996/Leetocde/blob/master/213.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%20II.cpp)
+* [303. 区域和检索 - 数组不可变](https://github.com/Hanqing1996/Leetocde/blob/master/303.%20%E5%8C%BA%E5%9F%9F%E5%92%8C%E6%A3%80%E7%B4%A2%20-%20%E6%95%B0%E7%BB%84%E4%B8%8D%E5%8F%AF%E5%8F%98)
 
 #### 树形dp
 * 整体观([337. 打家劫舍 III](https://github.com/Hanqing1996/Leetocde/blob/master/337.%20%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8D%20III.java))
@@ -313,9 +314,7 @@ class Solution {
 ```
 
 #### 观察规律
-```
 * [122. 买卖股票的最佳时机 II](https://github.com/Hanqing1996/Leetocde/blob/master/122.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20II.java)
-```
 
 #### 关于指针
 * 指针的用法
