@@ -271,6 +271,37 @@ if(A[i]==B[j]){
     dp[i][j]=dp[i-1][j-1]+1;
 }
 ```
+* 5. 最长回文子串
+```
+class Solution {
+public:
+    string longestPalindrome(string s) {
+        int size = s.size();
+        if (size < 2) {
+            return s;
+        }
+        bool dp[size][size];        
+        int maxLen = 1, start = 0;
+        
+        // 这个双层遍历实现了查找原先字符串的所有子串,注意它做到了先判断dp[8][8],再判断dp[7][9]
+        for (int i = 0; i < size; ++i) {
+            dp[i][i] = true; //单个字符本身
+            for (int j = 0; j < i; ++j) {
+                if (s[i] == s[j] && (i - j == 1 || dp[j+1][i-1])) {
+                    dp[j][i] = true;
+                    if (i - j + 1 > maxLen) {
+                        maxLen = i - j + 1;
+                        start = j;
+                    }
+                } else {
+                    dp[j][i] = false;
+                }
+            }
+        }
+        return s.substr(start, maxLen);
+    }
+};
+```
 * [300. 最长上升子序列(不连续)](https://github.com/Hanqing1996/Leetocde/blob/master/300.%20%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97.cpp)
 * [53. 最大子序和(连续)](https://github.com/Hanqing1996/Leetocde/blob/master/53.%20%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C.cpp)
 * [718. 最长重复子数组(连续)](https://github.com/Hanqing1996/Leetocde/blob/master/718.%20%E6%9C%80%E9%95%BF%E9%87%8D%E5%A4%8D%E5%AD%90%E6%95%B0%E7%BB%84.java)
