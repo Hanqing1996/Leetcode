@@ -345,6 +345,9 @@ class Solution {
 }
 ```
 
+#### 字符串
+* [14. 最长公共前缀(substr)](https://github.com/Hanqing1996/Leetocde/blob/master/14.%20%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80.cpp)
+
 #### 观察规律
 * [122. 买卖股票的最佳时机 II](https://github.com/Hanqing1996/Leetocde/blob/master/122.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20II.java)
 * [1025. 除数博弈](https://github.com/Hanqing1996/Leetocde/blob/master/1025.%20%E9%99%A4%E6%95%B0%E5%8D%9A%E5%BC%88.cpp)
