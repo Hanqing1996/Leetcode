@@ -1,5 +1,11 @@
 [coding地址](https://coding.net/u/usx15237/p/LeetCode/git)
 
+#### memset
+```
+int Hash[256];
+memset(Hash,-1,sizeof(Hash));
+```
+
 #### 最值
 * java
 ```
@@ -350,6 +356,7 @@ class Solution {
 * [242. 有效的字母异位词(hash)](https://github.com/Hanqing1996/Leetocde/blob/master/242.%20%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D.cpp)
 * [28. 实现 strStr()(substr)](https://github.com/Hanqing1996/Leetocde/blob/master/28.%20%E5%AE%9E%E7%8E%B0%20strStr().cpp)
 * [409. 最长回文串(hash)](https://github.com/Hanqing1996/Leetocde/blob/master/409.%20%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E4%B8%B2.cpp)
+* [205. 同构字符串(散列)](https://github.com/Hanqing1996/Leetocde/blob/master/205.%20%E5%90%8C%E6%9E%84%E5%AD%97%E7%AC%A6%E4%B8%B2.cpp)
 
 #### 观察规律
 * [122. 买卖股票的最佳时机 II](https://github.com/Hanqing1996/Leetocde/blob/master/122.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20II.java)
