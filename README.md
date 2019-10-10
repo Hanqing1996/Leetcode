@@ -1,5 +1,10 @@
 [coding地址](https://coding.net/u/usx15237/p/LeetCode/git)
 
+#### 空间复杂度
+* 不需要额外的空间是指的算法的空间复杂度为O(1)级别
+    * int result=2 就是不需要额外的空间
+    * int arr[n] 就是需要额外的空间
+
 #### memset
 ```
 int Hash[256];
