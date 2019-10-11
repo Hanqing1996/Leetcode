@@ -22,6 +22,16 @@ Integer.MIN_VALUE
 INT_MIN
 INT_MAX
 ```
+#### 异或：相同为0，不同为1
+1. 0 ^ a = a
+2. 0 ^ 1 = 1; 0 ^ 0 = 0; 1 ^ 1 = 0; 1 ^ 0 =1
+3. 交换律：a ^ b ^ c <=> a ^ c ^ b
+```
+int ans =11;
+ans=ans ^ 12; // ans=7
+```
+* [136. 只出现一次的数字](https://github.com/Hanqing1996/Leetocde/blob/master/136.%20%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E6%95%B0%E5%AD%97.cpp)
+
 #### 排序
 * [215. 数组中的第K个最大元素](https://github.com/Hanqing1996/Leetocde/blob/master/215.%20%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E7%AC%ACK%E4%B8%AA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0.Java)
 * 
