@@ -377,6 +377,7 @@ class Solution {
 
 #### Hash
 * [217. 存在重复元素](https://github.com/Hanqing1996/Leetocde/blob/master/217.%20%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0.cpp)
+* [594. 最长和谐子序列](https://github.com/Hanqing1996/Leetocde/blob/master/594.%20%E6%9C%80%E9%95%BF%E5%92%8C%E8%B0%90%E5%AD%90%E5%BA%8F%E5%88%97.cpp)
 
 
 #### 观察规律
