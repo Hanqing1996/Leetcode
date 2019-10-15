@@ -4,6 +4,15 @@
 * 不需要额外的空间是指的算法的空间复杂度为O(1)级别
     * int result=2 就是不需要额外的空间
     * int arr[n] 就是需要额外的空间
+* 原地修改数组
+```
+for(int i=1;i<nums.size();i++){
+   if(nums[i]!=nums[i-1]){
+       nums[count]=nums[i-1];
+       nums[++count]=nums[i];
+   }
+}
+```
 
 #### memset
 ```
@@ -22,6 +31,10 @@ Integer.MIN_VALUE
 INT_MIN
 INT_MAX
 ```
+
+#### 数组
+[26. 删除排序数组中的重复项](https://github.com/Hanqing1996/Leetocde/blob/master/26.%20%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9.cpp)
+
 #### 异或：相同为0，不同为1
 1. 0 ^ a = a
 2. 0 ^ 1 = 1; 0 ^ 0 = 0; 1 ^ 1 = 0; 1 ^ 0 =1
