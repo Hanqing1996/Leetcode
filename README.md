@@ -38,6 +38,13 @@ INT_MAX
 * [66. 加一](https://github.com/Hanqing1996/Leetocde/blob/master/66.%20%E5%8A%A0%E4%B8%80.cpp)
 * [283. 移动零](https://github.com/Hanqing1996/Leetocde/blob/master/283.%20%E7%A7%BB%E5%8A%A8%E9%9B%B6.cpp)
 
+#### 矩阵
+* 定义一个r*c的矩阵
+```
+vector<vector<int>> res(r, vector<int>(c));
+```
+* [566. 重塑矩阵(把一个矩阵赋值到另一个矩阵)](https://github.com/Hanqing1996/Leetocde/blob/master/566.%20%E9%87%8D%E5%A1%91%E7%9F%A9%E9%98%B5.cpp)
+
 #### 异或：相同为0，不同为1
 1. 0 ^ a = a
 2. 0 ^ 1 = 1; 0 ^ 0 = 0; 1 ^ 1 = 0; 1 ^ 0 =1
