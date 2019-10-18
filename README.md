@@ -37,7 +37,7 @@ INT_MAX
 * [27. 移除元素（与26类似）](https://github.com/Hanqing1996/Leetocde/blob/master/27.%20%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0.cpp)
 * [66. 加一](https://github.com/Hanqing1996/Leetocde/blob/master/66.%20%E5%8A%A0%E4%B8%80.cpp)
 * [283. 移动零](https://github.com/Hanqing1996/Leetocde/blob/master/283.%20%E7%A7%BB%E5%8A%A8%E9%9B%B6.cpp)
-* [485. 最大连续1的个数(未完成)](https://github.com/Hanqing1996/Leetocde/blob/master/485.%20%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD1%E7%9A%84%E4%B8%AA%E6%95%B0(%E6%9C%AA%E5%AE%8C%E6%88%90).cpp)
+* [485. 最大连续1的个数](https://github.com/Hanqing1996/Leetocde/blob/master/485.%20%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD1%E7%9A%84%E4%B8%AA%E6%95%B0.cpp)
 
 #### 矩阵
 * 定义一个r*c的矩阵
