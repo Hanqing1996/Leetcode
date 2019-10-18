@@ -10,12 +10,11 @@ public:
         
         int maxLen=0;
         int count=0;
-        for(int i=0;i<len;i++){
+        for(int i=0;i<nums.size();i++){
             if(nums[i]==0){
+                res.push_back(i);
                 if(count>0)
                     maxLen=max(maxLen,res[count]-res[count-1]-1);
-                
-                res.push_back(i);
                 count++;
             }
         }
