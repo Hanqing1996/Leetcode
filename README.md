@@ -45,6 +45,7 @@ INT_MAX
 vector<vector<int>> res(r, vector<int>(c));
 ```
 * [566. 重塑矩阵(把一个矩阵赋值到另一个矩阵)](https://github.com/Hanqing1996/Leetocde/blob/master/566.%20%E9%87%8D%E5%A1%91%E7%9F%A9%E9%98%B5.cpp)
+* [240. 搜索二维矩阵 II](https://github.com/Hanqing1996/Leetocde/blob/master/240.%20%E6%90%9C%E7%B4%A2%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5%20II.cpp)
 
 #### 异或：相同为0，不同为1
 1. 0 ^ a = a
