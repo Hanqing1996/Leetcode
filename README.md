@@ -44,9 +44,22 @@ INT_MAX
 ```
 vector<vector<int>> res(r, vector<int>(c));
 ```
+* 每行和每列元素均按升序排序
+```
+  [1,   4,  7, 11, 15],
+  [2,   5,  8, 12, 19],
+  [3,   6,  9, 16, 22],
+  [10, 13, 14, 17, 24],
+  [18, 21, 23, 26, 30]
+
+1. matrix[0][0]是最小元素，matrix[m-1][n-1]是最大元素
+2. matrix[i][j]向左，向上构成的矩阵中,matrix[i][j]为最大元素
+3. 小于14的元素全在14的左边及上面（一个以14为结尾的小矩阵+11,12）
+```
 * [566. 重塑矩阵(把一个矩阵赋值到另一个矩阵)](https://github.com/Hanqing1996/Leetocde/blob/master/566.%20%E9%87%8D%E5%A1%91%E7%9F%A9%E9%98%B5.cpp)
 * [240. 搜索二维矩阵 II](https://github.com/Hanqing1996/Leetocde/blob/master/240.%20%E6%90%9C%E7%B4%A2%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5%20II.cpp)
 * [74. 搜索二维矩阵（二分查找）](https://github.com/Hanqing1996/Leetocde/blob/master/74.%20%E6%90%9C%E7%B4%A2%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5.cpp)
+* [378. 有序矩阵中第K小的元素（二分查找）](https://github.com/Hanqing1996/Leetocde/blob/master/378.%20%E6%9C%89%E5%BA%8F%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%AC%ACK%E5%B0%8F%E7%9A%84%E5%85%83%E7%B4%A0.java)
 
 #### 异或：相同为0，不同为1
 1. 0 ^ a = a
