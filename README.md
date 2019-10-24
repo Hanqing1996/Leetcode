@@ -408,6 +408,19 @@ class Solution {
 ```
 
 #### 字符串
+* 由"dog cat cat dog"得到["dog","cat","cat","dog"]
+```
+int len=str.size();
+int pos=0;
+
+vector<string> words;
+
+while(pos!=-1){
+   pos=str.find_first_of(' ');
+   words.push_back(str.substr(0,pos));
+   str=str.substr(pos+1,len-pos-1);
+} 
+```
 * [14. 最长公共前缀(substr)](https://github.com/Hanqing1996/Leetocde/blob/master/14.%20%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%89%8D%E7%BC%80.cpp)
 * [242. 有效的字母异位词(hash)](https://github.com/Hanqing1996/Leetocde/blob/master/242.%20%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D.cpp)
 * [28. 实现 strStr()(substr)](https://github.com/Hanqing1996/Leetocde/blob/master/28.%20%E5%AE%9E%E7%8E%B0%20strStr().cpp)
@@ -419,6 +432,7 @@ class Solution {
 * [594. 最长和谐子序列](https://github.com/Hanqing1996/Leetocde/blob/master/594.%20%E6%9C%80%E9%95%BF%E5%92%8C%E8%B0%90%E5%AD%90%E5%BA%8F%E5%88%97.cpp)
 * [1189. “气球” 的最大数量](https://github.com/Hanqing1996/Leetocde/blob/master/1189.%20%E2%80%9C%E6%B0%94%E7%90%83%E2%80%9D%20%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E9%87%8F.cpp)
 * [299. 猜数字游戏](https://github.com/Hanqing1996/Leetocde/blob/master/299.%20%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F.cpp)
+* [290. 单词规律](https://github.com/Hanqing1996/Leetocde/blob/master/290.%20%E5%8D%95%E8%AF%8D%E8%A7%84%E5%BE%8B.cpp)
 
 #### 观察规律
 * [122. 买卖股票的最佳时机 II](https://github.com/Hanqing1996/Leetocde/blob/master/122.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20II.java)
