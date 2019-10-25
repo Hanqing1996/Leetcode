@@ -1,16 +1,19 @@
+// 时间复杂度：O(n) 空间复杂度：o(1)
 class Solution {
 public:
     vector<int> findDuplicates(vector<int>& nums) {
         
-        int n=nums.size();
         vector<int> res;
-        int Hash[100001];
-        
+        int repeat,lost,wrongSum=0,trueSum=0,n=nums.size();
+
         for(int i=0;i<n;i++){
-            Hash[nums[i]]++;
-            if(Hash[nums[i]]==2)
-                res.push_back(nums[i]);
+            if(nums[abs(nums[i])-1]>0)
+                nums[abs(nums[i])-1]=-nums[abs(nums[i])-1];
+            else
+                res.push_back(abs(nums[i]));
+            wrongSum+=abs(nums[i]);
         }
-        return res;
+        
+        return res; 
     }
 };
