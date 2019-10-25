@@ -40,6 +40,7 @@ INT_MAX
 * [485. 最大连续1的个数](https://github.com/Hanqing1996/Leetocde/blob/master/485.%20%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD1%E7%9A%84%E4%B8%AA%E6%95%B0.cpp)
 * [448. 找到所有数组中消失的数字（set）](https://github.com/Hanqing1996/Leetocde/blob/master/448.%20%E6%89%BE%E5%88%B0%E6%89%80%E6%9C%89%E6%95%B0%E7%BB%84%E4%B8%AD%E6%B6%88%E5%A4%B1%E7%9A%84%E6%95%B0%E5%AD%97.cpp)
 * [645. 错误的集合（set）](https://github.com/Hanqing1996/Leetocde/blob/master/645.%20%E9%94%99%E8%AF%AF%E7%9A%84%E9%9B%86%E5%90%88.cpp)
+* [442. 数组中重复的数据](https://github.com/Hanqing1996/Leetocde/blob/master/442.%20%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE.cpp)
 
 #### 矩阵
 * 定义一个r*c的矩阵
