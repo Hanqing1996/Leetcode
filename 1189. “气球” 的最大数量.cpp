@@ -1,7 +1,7 @@
 class Solution {
 public:
     int maxNumberOfBalloons(string text) {
-        int Hash[256];
+        int Hash[26]={0};
         string target="balloon";
         
         for(int i=0;i<text.size();i++){
