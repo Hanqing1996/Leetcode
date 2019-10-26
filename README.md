@@ -432,6 +432,23 @@ while(pos!=-1){
 * [205. 同构字符串(hash)](https://github.com/Hanqing1996/Leetocde/blob/master/205.%20%E5%90%8C%E6%9E%84%E5%AD%97%E7%AC%A6%E4%B8%B2.cpp)
 
 #### Hash
+```
+int main() {
+	int Hash[256];
+	string str="aaa";
+	for(int i=0;i<3;i++){
+	Hash[str[i]]++;
+	}
+	cout<<Hash['a']; // 3
+	
+	string str2="AAA";
+	for(int i=0;i<3;i++){
+	Hash[str2[i]]++;
+	}
+	cout<<Hash['a']; // 2326231
+}
+
+```
 * [217. 存在重复元素](https://github.com/Hanqing1996/Leetocde/blob/master/217.%20%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0.cpp)
 * [594. 最长和谐子序列](https://github.com/Hanqing1996/Leetocde/blob/master/594.%20%E6%9C%80%E9%95%BF%E5%92%8C%E8%B0%90%E5%AD%90%E5%BA%8F%E5%88%97.cpp)
 * [1189. “气球” 的最大数量](https://github.com/Hanqing1996/Leetocde/blob/master/1189.%20%E2%80%9C%E6%B0%94%E7%90%83%E2%80%9D%20%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E9%87%8F.cpp)
