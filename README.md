@@ -447,7 +447,24 @@ int main() {
 	}
 	cout<<Hash['a']; // 2326231
 }
-
+```
+* [771. 宝石与石头](https://github.com/Hanqing1996/Leetocde/blob/master/771.%20%E5%AE%9D%E7%9F%B3%E4%B8%8E%E7%9F%B3%E5%A4%B4.cpp)
+```
+class Solution {
+public:
+    int numJewelsInStones(string J, string S) {
+        int Hash[58]={0};
+        int count=0;
+        for(int i=0;i<J.size();i++){
+            Hash[J[i]-'A']++;
+        }
+        for(int i=0;i<S.size();i++){
+            if(Hash[S[i]-'A']==1)
+                count++;
+        }
+        return count;
+    }
+};
 ```
 * [217. 存在重复元素](https://github.com/Hanqing1996/Leetocde/blob/master/217.%20%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0.cpp)
 * [594. 最长和谐子序列](https://github.com/Hanqing1996/Leetocde/blob/master/594.%20%E6%9C%80%E9%95%BF%E5%92%8C%E8%B0%90%E5%AD%90%E5%BA%8F%E5%88%97.cpp)
