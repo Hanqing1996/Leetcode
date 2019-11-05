@@ -477,6 +477,10 @@ public:
 * [122. 买卖股票的最佳时机 II](https://github.com/Hanqing1996/Leetocde/blob/master/122.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20II.java)
 * [1025. 除数博弈](https://github.com/Hanqing1996/Leetocde/blob/master/1025.%20%E9%99%A4%E6%95%B0%E5%8D%9A%E5%BC%88.cpp)
 
+#### 回溯
+* [46. 全排列](https://github.com/Hanqing1996/Leetocde/blob/master/46.%20%E5%85%A8%E6%8E%92%E5%88%97.cpp)
+
+
 #### 关于指针
 * 指针的用法
 ```
