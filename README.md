@@ -478,12 +478,41 @@ public:
 * [1025. 除数博弈](https://github.com/Hanqing1996/Leetocde/blob/master/1025.%20%E9%99%A4%E6%95%B0%E5%8D%9A%E5%BC%88.cpp)
 
 #### 回溯
+```
+    void DFS(int x){
+        
+        // 到达叶节点
+        if(x==len){
+            cnt++;
+            
+            // 如果是第k个排列
+            if(cnt==seq){
+                
+                for(int i=0;i<len;i++){
+                    res+=a[i]+'0';
+                }
+            }
+        }
+        for(int i=0;i<len;i++){
+            if(vest[i]==false){
+                a[x]=nums[i];
+                vest[i]=true;
+                DFS(x+1);
+                vest[i]=false;
+            }
+        }
+        
+    }
+```
 * [46. 全排列](https://github.com/Hanqing1996/Leetocde/blob/master/46.%20%E5%85%A8%E6%8E%92%E5%88%97.cpp)
 * [47. 全排列 II](https://github.com/Hanqing1996/Leetocde/blob/master/47.%20%E5%85%A8%E6%8E%92%E5%88%97%20II.cpp)
+* [60. 第k个排列]https://github.com/Hanqing1996/Leetocde/blob/master/60.%20%E7%AC%ACk%E4%B8%AA%E6%8E%92%E5%88%97.cpp()
 
 #### 背包
 ```
     void DFS(int index,int cnt){
+    
+        // 到达叶节点
         if(index==maxSize){
             
 	    // 一定要写在if(index==maxSize)里面
@@ -508,7 +537,6 @@ public:
     }
 ```
 * [77. 组合](https://github.com/Hanqing1996/Leetocde/blob/master/77.%20%E7%BB%84%E5%90%88.cpp)
-
 
 #### 关于指针
 * 指针的用法
