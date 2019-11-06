@@ -479,6 +479,7 @@ public:
 
 #### 回溯
 * [46. 全排列](https://github.com/Hanqing1996/Leetocde/blob/master/46.%20%E5%85%A8%E6%8E%92%E5%88%97.cpp)
+* [47. 全排列 II](https://github.com/Hanqing1996/Leetocde/blob/master/47.%20%E5%85%A8%E6%8E%92%E5%88%97%20II.cpp)
 
 
 #### 关于指针
