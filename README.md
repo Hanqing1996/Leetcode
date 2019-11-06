@@ -537,6 +537,7 @@ public:
     }
 ```
 * [77. 组合](https://github.com/Hanqing1996/Leetocde/blob/master/77.%20%E7%BB%84%E5%90%88.cpp)
+* [78. 子集](https://github.com/Hanqing1996/Leetocde/blob/master/78.%20%E5%AD%90%E9%9B%86.cpp)
 
 #### 关于指针
 * 指针的用法
