@@ -481,6 +481,34 @@ public:
 * [46. 全排列](https://github.com/Hanqing1996/Leetocde/blob/master/46.%20%E5%85%A8%E6%8E%92%E5%88%97.cpp)
 * [47. 全排列 II](https://github.com/Hanqing1996/Leetocde/blob/master/47.%20%E5%85%A8%E6%8E%92%E5%88%97%20II.cpp)
 
+#### 背包
+```
+    void DFS(int index,int cnt){
+        if(index==maxSize){
+            
+	    // 一定要写在if(index==maxSize)里面
+            if(cnt==targetNum){
+                temp.clear();
+                for(int i=0;i<cnt;i++){
+                    temp.push_back(a[i]);
+                }
+                res.push_back(temp);
+            }
+            return;
+        }
+
+        // 选
+        if(cnt<=targetNum-1){
+            a[cnt]=nums[index];
+            DFS(index+1,cnt+1);
+        }
+        
+        // 不选
+        DFS(index+1,cnt);
+    }
+```
+* [77. 组合](https://github.com/Hanqing1996/Leetocde/blob/master/77.%20%E7%BB%84%E5%90%88.cpp)
+
 
 #### 关于指针
 * 指针的用法
