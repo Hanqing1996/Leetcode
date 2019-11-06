@@ -539,6 +539,7 @@ public:
 * [77. 组合](https://github.com/Hanqing1996/Leetocde/blob/master/77.%20%E7%BB%84%E5%90%88.cpp)
 * [78. 子集](https://github.com/Hanqing1996/Leetocde/blob/master/78.%20%E5%AD%90%E9%9B%86.cpp)
 * [39. 组合总和（可重复选）](https://github.com/Hanqing1996/Leetocde/blob/master/39.%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C.cpp)
+* [40. 组合总和 II](https://github.com/Hanqing1996/Leetocde/blob/master/40.%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C%20II.cpp)
 
 #### 关于指针
 * 指针的用法
