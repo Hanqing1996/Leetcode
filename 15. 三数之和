@@ -17,14 +17,16 @@ public:
         }
         return res;
     }
-    
+
     void DFS(int index,int currentSum,int cnt){
-        if(cnt==3&&currentSum==0){
-            se.insert(temp);
+
+        if(index==n){
+            if(cnt==3&&currentSum==0){
+                se.insert(temp);
+                return;
+            }
             return;
         }
-        if(index==n)
-            return;
         if(cnt<=2){
             temp.push_back(vec[index]);
             DFS(index+1,currentSum+vec[index],cnt+1);
@@ -33,6 +35,7 @@ public:
         DFS(index+1,currentSum,cnt); 
     }
 };
+
 
 // 双指针
 /**
