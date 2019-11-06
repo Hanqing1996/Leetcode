@@ -509,6 +509,7 @@ public:
 * [60. 第k个排列]https://github.com/Hanqing1996/Leetocde/blob/master/60.%20%E7%AC%ACk%E4%B8%AA%E6%8E%92%E5%88%97.cpp()
 
 #### 背包
+背包结果一定保证index有序，即不会得到 nums[8] nums[4] nums[1] nums[10] 这种结果
 ```
     void DFS(int index,int cnt){
     
@@ -538,6 +539,7 @@ public:
 ```
 * [77. 组合](https://github.com/Hanqing1996/Leetocde/blob/master/77.%20%E7%BB%84%E5%90%88.cpp)
 * [78. 子集](https://github.com/Hanqing1996/Leetocde/blob/master/78.%20%E5%AD%90%E9%9B%86.cpp)
+* [90. 子集 II](https://github.com/Hanqing1996/Leetocde/blob/master/90.%20%E5%AD%90%E9%9B%86%20II)
 * [39. 组合总和（可重复选）](https://github.com/Hanqing1996/Leetocde/blob/master/39.%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C.cpp)
 * [40. 组合总和 II](https://github.com/Hanqing1996/Leetocde/blob/master/40.%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C%20II.cpp)
 
