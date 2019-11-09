@@ -506,8 +506,9 @@ public:
 ```
 * [46. 全排列](https://github.com/Hanqing1996/Leetocde/blob/master/46.%20%E5%85%A8%E6%8E%92%E5%88%97.cpp)
 * [47. 全排列 II](https://github.com/Hanqing1996/Leetocde/blob/master/47.%20%E5%85%A8%E6%8E%92%E5%88%97%20II.cpp)
-* [60. 第k个排列]https://github.com/Hanqing1996/Leetocde/blob/master/60.%20%E7%AC%ACk%E4%B8%AA%E6%8E%92%E5%88%97.cpp()
+* [60. 第k个排列](https://github.com/Hanqing1996/Leetocde/blob/master/60.%20%E7%AC%ACk%E4%B8%AA%E6%8E%92%E5%88%97.cpp)
 * [17. 电话号码的字母组合](https://github.com/Hanqing1996/Leetocde/blob/master/17.%20%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88.cpp)
+* [79. 单词搜索(超时)](https://github.com/Hanqing1996/Leetocde/blob/master/79.%20%E5%8D%95%E8%AF%8D%E6%90%9C%E7%B4%A2.cpp)
 
 #### 背包
 背包结果一定保证index有序，即不会得到 nums[8] nums[4] nums[1] nums[10] 这种结果
