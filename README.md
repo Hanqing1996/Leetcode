@@ -505,9 +505,6 @@ public:
         
     }
 ```
-* [46. 全排列](https://github.com/Hanqing1996/Leetocde/blob/master/46.%20%E5%85%A8%E6%8E%92%E5%88%97.cpp)
-* [47. 全排列 II](https://github.com/Hanqing1996/Leetocde/blob/master/47.%20%E5%85%A8%E6%8E%92%E5%88%97%20II.cpp)
-* [60. 第k个排列](https://github.com/Hanqing1996/Leetocde/blob/master/60.%20%E7%AC%ACk%E4%B8%AA%E6%8E%92%E5%88%97.cpp)
 * [17. 电话号码的字母组合](https://github.com/Hanqing1996/Leetocde/blob/master/17.%20%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88.cpp)
 * [79. 单词搜索(超时)](https://github.com/Hanqing1996/Leetocde/blob/master/79.%20%E5%8D%95%E8%AF%8D%E6%90%9C%E7%B4%A2.cpp)
 * [200. 岛屿数量](https://github.com/Hanqing1996/Leetocde/blob/master/200.%20%E5%B2%9B%E5%B1%BF%E6%95%B0%E9%87%8F.cpp)
@@ -547,6 +544,13 @@ public:
 * [39. 组合总和（可重复选）](https://github.com/Hanqing1996/Leetocde/blob/master/39.%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C.cpp)
 * [40. 组合总和 II](https://github.com/Hanqing1996/Leetocde/blob/master/40.%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C%20II.cpp)
 * [216. 组合总和 III](https://github.com/Hanqing1996/Leetocde/blob/master/216.%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C%20III.cpp)
+
+#### DFS全排列
+* [46. 全排列](https://github.com/Hanqing1996/Leetocde/blob/master/46.%20%E5%85%A8%E6%8E%92%E5%88%97.cpp)
+* [47. 全排列 II](https://github.com/Hanqing1996/Leetocde/blob/master/47.%20%E5%85%A8%E6%8E%92%E5%88%97%20II.cpp)
+* [60. 第k个排列](https://github.com/Hanqing1996/Leetocde/blob/master/60.%20%E7%AC%ACk%E4%B8%AA%E6%8E%92%E5%88%97.cpp)
+* [526. 优美的排列](https://github.com/Hanqing1996/Leetocde/blob/master/526.%20%E4%BC%98%E7%BE%8E%E7%9A%84%E6%8E%92%E5%88%97.cpp)
+
 
 #### 关于指针
 * 指针的用法
