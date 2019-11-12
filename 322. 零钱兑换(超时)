@@ -1,0 +1,28 @@
+class Solution {
+public:
+    vector<int> nums;
+    int maxSize;
+    int requireSum;
+    int res=1001;
+    int coinChange(vector<int>& coins, int amount) {
+        nums=coins;
+        maxSize=nums.size();
+        requireSum=amount;
+        DFS(0,0,0);
+        if(res==1001) return -1;
+        return res;
+    }
+    void DFS(int index,long long sum,int cnt){
+        if(index==maxSize){
+            if(sum==requireSum){
+                res=min(res,cnt);
+            }
+            return;
+        }
+        
+        if(index<maxSize&&sum<requireSum){
+            DFS(index,sum+nums[index],cnt+1);
+        }
+        DFS(index+1,sum,cnt);
+    }
+};
