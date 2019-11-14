@@ -45,7 +45,7 @@ int a[3] = {1,0,0};
 ２. 正确姿势
 ```
 int Hash[256];
-memset(Hash,-1,sizeof(Hash));
+memset(Hash,-1,sizeof(Hash));// 不要memset(Hash,-1,２56);
 ```
 * [26. 删除排序数组中的重复项](https://github.com/Hanqing1996/Leetocde/blob/master/26.%20%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9.cpp)
 * [27. 移除元素（与26类似）](https://github.com/Hanqing1996/Leetocde/blob/master/27.%20%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0.cpp)
@@ -487,6 +487,7 @@ public:
 * [1189. “气球” 的最大数量](https://github.com/Hanqing1996/Leetocde/blob/master/1189.%20%E2%80%9C%E6%B0%94%E7%90%83%E2%80%9D%20%E7%9A%84%E6%9C%80%E5%A4%A7%E6%95%B0%E9%87%8F.cpp)
 * [299. 猜数字游戏](https://github.com/Hanqing1996/Leetocde/blob/master/299.%20%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F.cpp)
 * [290. 单词规律](https://github.com/Hanqing1996/Leetocde/blob/master/290.%20%E5%8D%95%E8%AF%8D%E8%A7%84%E5%BE%8B.cpp)
+* [73. 矩阵置零](https://github.com/Hanqing1996/Leetocde/blob/master/73.%20%E7%9F%A9%E9%98%B5%E7%BD%AE%E9%9B%B6.cpp)
 
 #### 观察规律
 * [122. 买卖股票的最佳时机 II](https://github.com/Hanqing1996/Leetocde/blob/master/122.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20II.java)
