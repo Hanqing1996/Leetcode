@@ -33,6 +33,20 @@ INT_MAX
 ```
 
 #### 数组
+* 数组初始化
+１. 错误姿势
+```
+int a[3] = {1};
+```
+等价于
+```
+int a[3] = {1,0,0};
+```
+２. 正确姿势
+```
+int Hash[256];
+memset(Hash,-1,sizeof(Hash));
+```
 * [26. 删除排序数组中的重复项](https://github.com/Hanqing1996/Leetocde/blob/master/26.%20%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9.cpp)
 * [27. 移除元素（与26类似）](https://github.com/Hanqing1996/Leetocde/blob/master/27.%20%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0.cpp)
 * [66. 加一](https://github.com/Hanqing1996/Leetocde/blob/master/66.%20%E5%8A%A0%E4%B8%80.cpp)
