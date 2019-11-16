@@ -56,6 +56,7 @@ memset(Hash,-1,sizeof(Hash));// 不要memset(Hash,-1,２56);
 * [645. 错误的集合（set）](https://github.com/Hanqing1996/Leetocde/blob/master/645.%20%E9%94%99%E8%AF%AF%E7%9A%84%E9%9B%86%E5%90%88.cpp)
 * [442. 数组中重复的数据](https://github.com/Hanqing1996/Leetocde/blob/master/442.%20%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E6%8D%AE.cpp)
 * [287. 寻找重复数](https://github.com/Hanqing1996/Leetocde/blob/master/287.%20%E5%AF%BB%E6%89%BE%E9%87%8D%E5%A4%8D%E6%95%B0.cpp)
+* [739. 每日温度](https://github.com/Hanqing1996/Leetocde/blob/master/739.%20%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6.cpp)
 
 #### 矩阵
 * 定义一个r*c的矩阵
