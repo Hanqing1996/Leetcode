@@ -16,7 +16,7 @@ for(int i=1;i<nums.size();i++){
 
 #### memset
 ```
-int Hash[256];
+int [256];
 memset(Hash,-1,sizeof(Hash));
 ```
 
@@ -496,6 +496,7 @@ public:
 * [299. 猜数字游戏](https://github.com/Hanqing1996/Leetocde/blob/master/299.%20%E7%8C%9C%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F.cpp)
 * [290. 单词规律](https://github.com/Hanqing1996/Leetocde/blob/master/290.%20%E5%8D%95%E8%AF%8D%E8%A7%84%E5%BE%8B.cpp)
 * [73. 矩阵置零](https://github.com/Hanqing1996/Leetocde/blob/master/73.%20%E7%9F%A9%E9%98%B5%E7%BD%AE%E9%9B%B6.cpp)
+* [383. 赎金信](https://github.com/Hanqing1996/Leetocde/blob/master/383.%20%E8%B5%8E%E9%87%91%E4%BF%A1.cpp)
 
 #### 观察规律
 * [122. 买卖股票的最佳时机 II](https://github.com/Hanqing1996/Leetocde/blob/master/122.%20%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%20II.java)
