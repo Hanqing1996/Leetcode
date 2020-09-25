@@ -2,6 +2,8 @@
  * @param {number[]} nums
  * @return {number}
  */
+
+//  dp[i]表示以nums[i]结尾的连续子数组最大和；
 var maxSubArray = function(nums) {
     let dp=nums
     if(nums.length==1)
