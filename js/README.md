@@ -15,3 +15,43 @@
     * 因为一个元素对应的结果，要靠还没有入栈的元素的值确定，因此在遍历的时候，一定有一个元素入栈；
     * 出栈的时候，出栈元素的结果可以确定
 
+#### 排序
+递归:等尽头
+```js
+// 实现归并排序
+function mergeSort(arr){
+
+    if(arr.length<2){
+        return arr
+    }
+    
+    let middle=arr.length/2
+    let leftArray=arr.slice(0,middle)
+    let rightArray=arr.slice(middle)
+    
+    let left=mergeSort(leftArray)
+    let right=mergeSort(rightArray)
+
+    let result=[]
+
+	while (left.length && right.length) {
+		// 注意: 判断的条件是小于或等于，如果只是小于，那么排序将不稳定.
+		if (left[0] <= right[0]) {
+			result.push(left.shift());
+		} else {
+			result.push(right.shift());
+		}
+	}
+
+	while (left.length) result.push(left.shift());
+
+	while (right.length) result.push(right.shift());
+    
+    console.log(result);
+    
+    return result
+}
+
+let sortedArr=mergeSort([3, 4, 5, 6, 7, 8, 9, 10])
+
+```
