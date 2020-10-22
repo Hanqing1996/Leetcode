@@ -2,6 +2,10 @@
  * @param {number[]} nums
  * @return {number}
  */
+
+
+// 参考 https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/solution/jian-dan-yi-dong-gui-bing-pai-xu-python-by-azl3979/
+
 let count=0
 var reversePairs = function(nums) {
 
@@ -38,6 +42,10 @@ function mergeSort(arr){
 		} else {
             result.push(right.shift());
 
+            /**
+             * 这一行是相较于归并排序，唯一多的一行。
+             * 这里求新的逆序对数的原理很简单:[2,3,8,10],[4,5,6,7];对于right中的4而言，left中的8(leftIndex=2)比他大，就意味着left中8右边的数一定都比4大。则 count+(4-2)
+             */
             count+=(leftLen-leftIndex)
 		}
 	}
