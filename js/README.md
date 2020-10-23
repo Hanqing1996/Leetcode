@@ -67,6 +67,14 @@ let sortedArr=mergeSort([3, 4, 5, 6, 7, 8, 9, 10])
 
 [![BAALh8.png](https://s1.ax1x.com/2020/10/23/BAALh8.png)](https://imgchr.com/i/BAALh8)
 
+
+
+* 根据数组建立小顶堆
+
+参考:https://github.com/sisterAn/JavaScript-Algorithms/issues/60
+
+
+
 #### top K 问题
 
 1. 选取数组的前k个元素，构成一个小顶堆。
