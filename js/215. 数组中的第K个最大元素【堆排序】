@@ -1,0 +1,53 @@
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+
+var findKthLargest = function(nums, k) {
+    let arr=[,]
+    for(let i=0;i<k;i++){
+        arr.push(nums[i])
+    }
+    buildHeap(arr,k)
+
+    for(let i=k;i<nums.length;i++){
+        if(nums[i]>arr[1]){
+            arr[1]=nums[i]
+            buildHeap(arr,k)
+        }
+    }
+    arr.shift()
+    // 返回栈顶元素即可
+    return arr[0]
+};
+
+// 建立小顶堆
+function buildHeap(arr,k){
+    for(let i=Math.floor(k/2);i>=1;i--){
+        heapifySmall(arr,i,k)
+    }
+}
+
+
+function heapifySmall(arr,i,heapSize){
+    while (true) {
+        var minIndex = i;
+        if(2*i <= heapSize && arr[i] > arr[i*2] ) {
+            minIndex = i*2;
+        }
+        if(2*i+1 <= heapSize && arr[minIndex] > arr[i*2+1] ) {
+            minIndex = i*2+1;
+        }
+        if (minIndex === i) break;
+        swap(arr, i, minIndex); // 交换 
+        i = minIndex; 
+    }
+}
+
+let swap = (arr, i , j) => {
+    if(i===j) return
+    let temp = arr[i]
+    arr[i] = arr[j]
+    arr[j] = temp
+}
