@@ -72,6 +72,70 @@ let sortedArr=mergeSort([3, 4, 5, 6, 7, 8, 9, 10])
 * 根据数组建立小顶堆
 
 参考:https://github.com/sisterAn/JavaScript-Algorithms/issues/60
+```
+/**
+ * 比如[,6,5,4,1,3,2,8]变成[,8,5,6,1,3,2,4]
+ * 将[,6,5,4,1,3,2,8]对应的完全二叉树（按下标逐层铺展开）改造为一个大顶堆
+ *     1
+ *   2   3
+ *  4 5 6 7
+ * 8 9
+ */
+function buildHeap(arr){
+    // 从最后一个非叶子节点开始,注意 arr[0]不用于存储数据，即arr对应完全二叉树的映射下标是直接从1开始的
+    let heapSize=arr.length-1
+    for(let i=Math.floor(heapSize/2);i>=1;i--){
+        console.log(i)
+        heapifyBig(arr,i,heapSize)
+    }
+    return arr
+}
+
+// 建立小顶堆
+function heapifySmall(arr,i,heapSize){
+    // 让人惊艳的while循环，保证了在以i节点为父节点时若发生父子节点值呼唤，则会自动向i节点以后检验子节点树是否符合大顶堆特性
+    while (true) {
+        var minIndex = i;
+        if(2*i <= heapSize && arr[i] > arr[i*2] ) {
+            minIndex = i*2;
+        }
+        if(2*i+1 <= heapSize && arr[minIndex] > arr[i*2+1] ) {
+            minIndex = i*2+1;
+        }
+        if (minIndex === i) break;
+        swap(arr, i, minIndex); // 交换 
+        i = minIndex; 
+    }
+}
+
+// 建立大顶堆
+function heapifyBig(arr,i,heapSize){
+    // 让人惊艳的while循环，保证了在以i节点为父节点时若发生父子节点值呼唤，则会自动向i节点以后检验子节点树是否符合大顶堆特性
+    while (true) {
+        var maxIndex = i;
+        if(2*i <= heapSize && arr[i] < arr[i*2] ) {
+            maxIndex = i*2;
+        }
+        if(2*i+1 <= heapSize && arr[maxIndex] < arr[i*2+1] ) {
+            maxIndex = i*2+1;
+        }
+        if (maxIndex === i) break;
+        swap(arr, i, maxIndex); // 交换 
+        i = maxIndex; 
+    }
+}
+
+
+let swap = (arr, i , j) => {
+    if(i===j) return
+    let temp = arr[i]
+    arr[i] = arr[j]
+    arr[j] = temp
+}
+
+let example=[,5, 2, 3, 4, 1]
+console.log(buildHeap(example))
+```
 
 
 
