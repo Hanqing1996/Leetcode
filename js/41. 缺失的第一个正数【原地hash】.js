@@ -19,7 +19,7 @@ var firstMissingPositive = function(nums) {
 
     for(let i=0;i<nums.length;i++){
         // 处理[6,7,8,9],所以不是判断负值
-        if(nums[nums[i]-1]!=i+1){
+        if(nums[i]!=i+1){
             return i+1
         }
     }
