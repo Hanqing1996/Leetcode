@@ -163,6 +163,7 @@ console.log(buildHeap(example))
 p实际是用于构造符合题意的新数组。q用于遍历原先数组，并填充p
 * [26. 删除排序数组中的重复项](https://github.com/Hanqing1996/Leetcode/blob/master/js/26.%20%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9%E3%80%90%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86-%E5%8F%8C%E6%8C%87%E9%92%88%E3%80%91.js)
 * [27. 移除元素](https://github.com/Hanqing1996/Leetcode/blob/master/js/27.%20%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0%E3%80%90%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86-%E5%8F%8C%E6%8C%87%E9%92%88%E3%80%91.js)
+* [283. 移动零](https://github.com/Hanqing1996/Leetcode/blob/master/js/283.%20%E7%A7%BB%E5%8A%A8%E9%9B%B6%E3%80%90%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86-%E5%8F%8C%E6%8C%87%E9%92%88%E3%80%91.js)
 ```
 /**
  * @param {number[]} nums
