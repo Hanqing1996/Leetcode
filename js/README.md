@@ -158,3 +158,29 @@ console.log(buildHeap(example))
 
 #### 原地哈希
 > 不用到任何额外空间
+---
+#### 数组遍历-双指针
+p实际是用于构造符合题意的新数组。q用于遍历原先数组，并填充p
+* [26. 删除排序数组中的重复项](https://github.com/Hanqing1996/Leetcode/blob/master/js/26.%20%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E9%A1%B9%E3%80%90%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86-%E5%8F%8C%E6%8C%87%E9%92%88%E3%80%91.js)
+* [27. 移除元素](https://github.com/Hanqing1996/Leetcode/blob/master/js/27.%20%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0%E3%80%90%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86-%E5%8F%8C%E6%8C%87%E9%92%88%E3%80%91.js)
+```
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+
+ // 双指针，p指向不等于val的元素，q用于遍历 nums 数组（注意 p,q不是同步增长的，我们需要用 q来填充 nums[p]）
+var removeElement = function(nums, val) {
+    let p=0
+    for(let q=0;q<nums.length;q++){
+        if(nums[q]!=val){
+            nums[p]=nums[q]
+            p++
+        }
+    }
+    // 数组已经遍历完，此时p即为原nums中不等于val的元素个数
+    return p
+};
+
+```
