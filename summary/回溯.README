@@ -1,0 +1,515 @@
+* 46. 全排列
+
+> 无需事先排序。想要出现 [...6,3] 这样的排列，所以 for 循环的起点总是0
+
+* 47. 全排列II
+
+> 需要事先排序，以便于检测纵向递进时下一个数是否与上一个重复（这里指的是数值）。
+
+* 39. 组合总和
+
+> 无需事先排序。设置了 for 循环的起点为上次的 index 以保证 nums[i] 之前的元素不会被选到（不然 candidates = [2,3,6,7]，可能出现排列 [...6,3]，这也是这类题与全排列的不同，全排列 for 循环的起点总是0，以保证 [...6.3] 这样的排列是可能出现的）。
+
+* 40. 组合总数II
+
+> 需要事先排序，以便于检测纵向递进时下一个数是否与上一个重复。
+
+---
+
+
+
+**总结**
+
+* dfs 传递 depth 效率比 temp 高（耗时更少）
+
+*  candidates = [2,3,6,7]，想要返回 [...6,3] 这样的排列，就设置 for 循环的起点总为 0，否则就设置 for 循环的起点为 index（参考 39）
+* **candidates 有重复元素的情况下**，需要让返回的排列不重复（candidates = [1,1,2,3]，不能返回 [1,1,2]，[1,1,2]），就是事先排序并检测纵向递进时下一个数是否与上一个重复。
+
+* candidates = [2,3,6,7]，想要返回 [...3,3,3...] 这样的排列，就设置  dfs(i...)，否则设置 dfs(i+1...)
+
+* candidates 的每个数字只能使用一次，若 for 循环的起点为 index，无需额外设置。若for 循环的起点总为0，则需要设置 visited 数组做过滤。
+
+
+
+
+
+横向的递进总是从 `for (let i = xxx...) `的 `xxx`开始（即每次都是新的轮回），因为横向是进入一个新的，更下层的 DFS
+
+纵向的递进总是从 `for (...;i++) `的 `i++`开始（即旧轮回的继续），因为纵向是返回旧的的，上层的 DFS
+
+---
+
+
+
+
+
+#### 46. 全排列
+
+给定一个 **没有重复** 数字的序列，返回其所有可能的全排列。
+
+```
+输入: [1,2,3]
+输出:
+[
+  [1,2,3],
+  [1,3,2],
+  [2,1,3],
+  [2,3,1],
+  [3,1,2],
+  [3,2,1]
+]
+```
+
+* code
+
+```js
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var permute = function(nums) {
+
+    let ans=[],res=[]
+    let visited=Array(nums.length).fill(false) 
+
+    let DFS=function(depth){
+        if(depth===nums.length){
+            res.push([...ans])
+            return 
+        }
+
+        for(let i=0;i<nums.length;i++){
+            if(!visited[i]){
+                ans[depth]=nums[i]
+                visited[i]=true
+                DFS(depth+1)
+                visited[i]=false
+            }
+        }  
+    }
+
+    DFS(0)
+    return res
+};
+
+// 结果
+// 横向看 [1->2->3]的递进是 DFS不断深入到下层（DFS(1)->DFS(2)）+ visited 过滤 的结果。
+// 纵向看 [1, 2->3 ... ]的变化是DFS回退到上层（DFS(2)->DFS(1)）后继续之前的for循环，for 循环遍历的结果（DFS 回退后 i++,所以nums由2遍历到3）
+```
+
+---
+
+#### 47. 全排列 II
+
+给定一个可包含重复数字的序列 `nums` ，**按任意顺序** 返回所有不重复的全排列。
+
+```
+输入：nums = [1,1,2]
+输出：
+[[1,1,2],
+ [1,2,1],
+ [2,1,1]]
+```
+
+* code
+
+```js
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var permuteUnique = function(nums) {
+
+    // 排序，把相同的元素聚集起来，以方便后面的重复过滤
+    nums=nums.sort((a,b)=>a-b)
+
+    let ans=[],res=[]
+    let visited=Array(nums.length).fill(false) 
+
+    let DFS=function(depth){
+        if(depth===nums.length){
+            res.push([...ans])
+            return 
+        }
+
+        for(let i=0;i<nums.length;i++){
+            // [...1,1...] 如果上次已经设置 ans[i-1]=1(前面那个)，本次 ans[i]=1(后面那个)就不能设置了，否则会重复
+            // !visited[i-1] 是用来保证目前是对纵向遍历作拦截(!visited[i-1] 证明一定是刚刚从下一个 DFS 中回退回来)
+            if(!visited[i]){
+                if(i>0&&nums[i]===nums[i-1]&&!visited[i-1])
+                    continue
+                ans[depth]=nums[i]
+                visited[i]=true
+                DFS(depth+1)
+                visited[i]=false
+            }
+        }  
+    }
+
+    DFS(0)
+    return res
+};
+
+```
+
+---
+
+#### 39. 组合总和
+
+给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
+
+candidates 中的数字可以无限制重复被选取。
+
+说明：
+
+* 所有数字（包括 target）都是正整数。
+* 解集不能包含重复的组合。 
+
+```
+输入：candidates = [2,3,6,7], target = 7,
+所求解集为：
+[
+  [7],
+  [2,2,3]
+]
+```
+
+* code
+
+```js
+const combinationSum = (candidates, target) => {
+    let ans=[]
+    let res = [];
+    const dfs = (index, count, sum) => {
+      if (sum >= target) {
+        if (sum == target) {
+          res.push([...ans.slice(0,count)]);
+        }
+        return; 
+      }
+      for (let i = index; i < candidates.length; i++) {
+        if(sum+candidates[i]<=target){
+            ans[count]=candidates[i]         
+            dfs(i, count+1, sum + candidates[i]); // 每个数字可以无限制重复被选取，所以这里是 dfs(i...) 而非 dfs(i+1...)
+        }
+      }
+    };
+    dfs(0, 0, 0);
+    return res;
+  };
+
+ // 横向:[2->2->2->2]的递进是 DFS不断深入到下层+ 过滤 index 之前的数字（不像 46 题那样设置 visited 过滤）
+ // 纵向:[2,2,2->3 ...]的递进是DFS回退到上层（DFS(2)->DFS(1)）后继续之前的for循环，for 循环遍历的结果（DFS 回退后 i++,所以nums由2遍历到3） 
+```
+
+---
+
+#### 40. 组合总和 II
+
+给定一个数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
+
+candidates 中的每个数字在每个组合中只能使用一次。
+
+说明：
+
+* 所有数字（包括目标数）都是正整数。
+
+* 解集不能包含重复的组合。 
+
+```js
+输入: candidates = [10,1,2,7,6,1,5], target = 8,
+所求解集为:
+[
+  [1, 7],
+  [1, 2, 5],
+  [2, 6],
+  [1, 1, 6]
+]
+```
+
+* code
+
+```js
+const combinationSum2 = (candidates, target) => {
+    candidates=candidates.sort((a,b)=>a-b)
+
+    let ans=[]
+    let res = [];
+    const dfs = (index, count, sum) => {
+      if (sum >= target) {
+        if (sum == target) {
+          res.push([...ans.slice(0,count)]);
+        }
+        return;    
+      }
+      for (let i = index; i < candidates.length; i++) { 
+
+
+        if(i>index&&candidates[i]===candidates[i-1])
+            continue
+
+        if(sum+candidates[i]<=target){
+            ans[count]=candidates[i]
+            dfs(i+1, count+1, sum + candidates[i]); // 每个数字只能使用一次，所以这里是 i+1                  
+        }
+      }
+    };
+    dfs(0, 0, 0);
+    return res;
+  };
+```
+
+---
+
+#### 78. 子集
+
+给定一组不含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。
+
+说明：解集不能包含重复的子集。
+
+```
+示例:
+
+输入: nums = [1,2,3]
+输出:
+[
+  [3],
+  [1],
+  [2],
+  [1,2,3],
+  [1,3],
+  [2,3],
+  [1,2],
+  []
+]
+```
+
+* code
+
+```js
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+
+// 不允许返回 [3,2] 这样的排列=>设置 for 循环起点为 index
+// candidates 的每个数字只能使用一次，若 for 循环的起点为 index，无需额外设置。
+var subsets = function(nums) {
+    let res=[[]]
+    let ans=[]
+
+    const dfs=function(index,count){
+        for(let i=index;i<nums.length;i++){
+            ans[count]=nums[i]
+            res.push([...ans.slice(0,count+1)])
+
+            dfs(i+1,count+1)
+        }
+    }
+    dfs(0,0)
+    return res
+};
+```
+
+---
+
+#### 77. 组合
+
+给定两个整数 n 和 k，返回 1 ... n 中所有可能的 k 个数的组合。
+
+**示例:**
+
+```
+输入: n = 4, k = 2
+输出:
+[
+  [2,4],
+  [3,4],
+  [2,3],
+  [1,2],
+  [1,3],
+  [1,4],
+]
+```
+
+* code
+
+```js
+/**
+ * @param {number} n
+ * @param {number} k
+ * @return {number[][]}
+ */
+
+// 不允许返回 [3,2] 这样的排列=>设置 for 循环起点为 index
+// candidates 的每个数字只能使用一次，若 for 循环的起点为 index，无需额外设置。
+var combine = function(n, k) {
+    let nums=[]
+    for(let i=0;i<n;i++)
+        nums.push(i+1)
+
+    let ans=[]
+    let res=[]
+
+    const dfs=function(index,count){
+
+        if(count==k){
+            res.push([...ans])
+            return
+        }
+
+        for(let i=index;i<nums.length;i++){
+            ans[count]=nums[i]
+            dfs(i+1,count+1)
+        }
+    }
+    dfs(0,0)
+    return res    
+};
+```
+
+---
+
+#### 90. 子集 II
+
+给定一个可能包含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。
+
+**说明：**解集不能包含重复的子集。
+
+**示例:**
+
+```
+输入: [1,2,2]
+输出:
+[
+  [2],
+  [1],
+  [1,2,2],
+  [2,2],
+  [1,2],
+  []
+]
+```
+
+* code
+
+```js
+/**
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+
+// 有重复元素的情况下，需要让返回的排列不重复=>事先排序并检测纵向递进时下一个数是否与上一个重复。
+// 不允许返回 [2,1] 这样的排列=>设置 for 循环起点为 index
+// candidates 的每个数字只能使用一次，若 for 循环的起点为 index，无需额外设置。
+var subsetsWithDup = function(nums) {
+    nums=nums.sort((a,b)=>a-b)
+
+    let res=[[]]
+    let ans=[]
+
+    const dfs=function(index,count){
+
+        for(let i=index;i<nums.length;i++){
+            if(i>index&&nums[i]===nums[i-1]){
+                continue
+            }
+
+            ans[count]=nums[i]
+            res.push([...ans.slice(0,count+1)])
+            dfs(i+1,count+1)
+        }
+    }
+    dfs(0,0)
+    return res
+};
+```
+
+---
+
+#### 60. 排列序列
+
+给出集合 [1,2,3,...,n]，其所有元素共有 n! 种排列。
+
+按大小顺序列出所有排列情况，并一一标记，当 n = 3 时, 所有排列如下：
+
+```
+"123"
+"132"
+"213"
+"231"
+"312"
+"321"
+```
+
+
+给定 n 和 k，返回第 k 个排列。
+
+**示例 1：**
+
+```
+输入：n = 3, k = 3
+输出："213"
+```
+
+**示例 2：**
+
+```
+输入：n = 4, k = 9
+输出："2314"
+```
+
+**示例 3：**
+
+```
+输入：n = 3, k = 1
+输出："123"
+```
+
+* code
+
+```js
+/**
+ * @param {number} n
+ * @param {number} k
+ * @return {string}
+ */
+
+// 无非是全排列基础上，在找到指定第k种排列后，做到提前结束DFS递归而已
+var getPermutation = function(n, k) {
+
+    let ans=[]
+    let count=0
+    let finded=false
+    let visited=Array(n+1).fill(false) 
+    let res=""
+
+    const dfs=function(depth){
+        if(finded)
+            return
+
+        if(depth===n){
+            count++
+            if(count===k){
+                finded=true
+                res=ans.join("")
+            }
+            return
+        }
+
+        for(let i=1;i<=n;i++){
+            if(!visited[i]){
+                ans[depth]=i
+                visited[i]=true
+                dfs(depth+1)
+                visited[i]=false
+            }
+        }
+    }
+    dfs(0)
+    return res
+};
+```
+
+
+
