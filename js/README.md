@@ -1,3 +1,251 @@
+
+
+#### 回溯
+
+* [46. 全排列](https://github.com/Hanqing1996/Leetcode/blob/master/js/46.%20%E5%85%A8%E6%8E%92%E5%88%97%E3%80%90%E5%9B%9E%E6%BA%AF%E3%80%91.js)
+
+  全排列
+
+  ```js
+  /**
+   * @param {number[]} nums
+   * @return {number[][]}
+   */
+  var permute = function(nums) {
+  
+      let ans=[],res=[]
+      let visited=Array(1024).fill(false) 
+  
+      let DFS=function(depth){
+          if(depth===nums.length){
+              res.push([...ans])
+              return 
+          }
+  
+          for(let i=0;i<nums.length;i++){
+              if(!visited[nums[i]]){ // 用 visited[i]判断更好，因为不能保证 nums 内没有重复元素
+                  ans[depth]=nums[i] 
+                  visited[nums[i]]=true
+                  DFS(depth+1)
+                  visited[nums[i]]=false
+              }
+          }  
+      }
+  
+      DFS(0)
+      return res
+  };
+  
+  
+  // 结果
+  // 横向看 [1->2->3]的递进是DFS不断深入到下层（DFS(1)->DFS(2)）执行的结果。
+  // 横向看 [1, 2->3 ... ]的变化是DFS回退到上层（DFS(2)->DFS(1)）后继续之前的for循环，for 循环遍历的结果（DFS 回退后 i++,所以nums由2遍历到3）
+  [
+    [1,2,3],
+    [1,3,2],
+    [2,1,3],
+    [2,3,1],
+    [3,1,2],
+    [3,2,1]
+  ]
+  ```
+
+  
+
+  ```js
+  // 对于 for 循环而言:
+  // 回退（DFS(2)->DFS(1)），上次的 i+1开始继续，即切换上下文后继续之前未完成的循环
+  // 进入（DFS(1)->DFS(2)），i从0开始
+  
+  DFS(0)
+  ans[0]=1
+  v[1]=true
+              DFS(1)
+              ans[1]=2 
+              v[2]=true
+                          DFS(2)
+                          ans[2]=3
+                          v[3]=true            
+                                      DFS(3)
+                                      res.push([1,2,3])
+                          v[3]=false
+              v[2]=false
+              ans[1]=3 // 虽然 v[2] 变为 false 了，但是由于 for 循环的特性，i++后指向 nums[2] 即 3 了
+              v[3]=true
+                          DFS(2)
+                          ans[2]=2
+                          v[2]=true
+                                      DFS(3)
+                                      res.push([1,3,2])
+                          v[2]=false
+              v[3]=false
+  v[1]=false
+  ans[0]=2
+  v[2]=true 
+              DFS(1)
+              ans[1]=1
+              v[1]=true
+                          DFS(2)
+                          ans[2]=3
+                          v[3]=true
+                                      DFS(3)
+                                      res.push([2,1,3])
+                          v[3]=false            
+              v[1]=false
+              ans[1]=3
+              v[3]=true   
+                          DFS(2)
+                          ans[2]=1
+                          v[1]=true
+                                      DFS(3)
+                                      res.push([2,3,1])
+  ......            
+  ```
+
+* [47. 全排列 II](https://github.com/Hanqing1996/Leetcode/blob/master/js/47.%20%E5%85%A8%E6%8E%92%E5%88%97%20II%E3%80%90%E5%9B%9E%E6%BA%AF%E3%80%91.js)
+
+* [39. 组合总和](https://github.com/Hanqing1996/Leetcode/blob/master/js/39.%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C%E3%80%90%E5%9B%9E%E6%BA%AF%E3%80%91.js)
+
+  > 回溯也可以解决重复选的问题
+
+  ```js
+  const combinationSum = (candidates, target) => {
+      const res = [];
+      const dfs = (start, temp, sum) => {
+        if (sum >= target) {
+          if (sum == target) {
+            res.push([...temp]); // temp的拷贝
+          }
+          return;     // 结束当前递归
+        }
+        for (let i = start; i < candidates.length; i++) { // 枚举出选择，从start开始
+          // 无论是背包还是回溯，剪枝条件是一样的
+          if(sum+candidates[i]<=target){
+              temp.push(candidates[i]);           // 加入“部分解”
+              dfs(i, temp, sum + candidates[i]);  // 往下继续选择，同时sum累加上当前数字
+              temp.pop();                        
+          }
+        }
+      };
+      dfs(0, [], 0);
+      return res;
+    };
+  ```
+
+---
+
+#### 背包
+
+* [39. 组合总和【选或不选】](https://github.com/Hanqing1996/Leetcode/blob/master/js/39.%20%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C%E3%80%90%E8%83%8C%E5%8C%85-%E9%80%89%E6%88%96%E4%B8%8D%E9%80%89%E3%80%91.js)
+
+  要尽量剪枝，因为背包的边界条件是`index===len`，当已经发现目前路径不合理时，也必须多次DFS到达边界才能逐步回退。
+
+  ```js
+  /**
+   * @param {number[]} candidates
+   * @param {number} target
+   * @return {number[][]}
+   */
+  var combinationSum = function(candidates, target) {
+  
+      let {length:len}=candidates
+      let ans=[]
+      let res=[]
+      let DFS=function(index,sum,count){
+  
+          if(index===len){
+              if(sum===target){
+                  res.push([...ans.slice(0,count)])
+              }
+              return
+          }
+  
+          // 选
+          if(sum+candidates[index]<=target){
+              ans[count]=candidates[index]
+              DFS(index,sum+candidates[index],count+1)
+          }
+  
+          // 不选
+          DFS(index+1,sum,count)
+      }
+  
+      DFS(0,0,0)
+      return res
+  };
+  
+  let candidates = [2,3,6,7], target = 7
+  let res=combinationSum(candidates,target)
+  console.log(res)                                                           
+  ```
+
+  ```js
+  target=7
+              
+  DFS(0,0,0)
+  ans[0]=2
+  sum=0+2
+          DFS(0,2,1)
+          ans[1]=2
+          sum=2+2
+                      DFS(0,4,2)
+                      ans[2]=2
+                      sum=4+2
+                                  DFS(0,6,3)
+                                  ans[3]=2
+                                  sum=6+2
+  											// 这里已经发现 [2,2,2,2] 这条路径不合理，但是仍然要多次 DFS 到达边界(index===len)才能回退
+                                              DFS(0,8,4)
+                                              !8<target 
+                                                          DFS(1,8,4)
+                                                          !8<target
+                                                                      DFS(2,8,4)
+                                                                      !8<target
+                                                                                  DFS(3,8,4)
+                                                                                  !8<target
+                                                                                              DFS(4,8,4)
+                                                                                              4===len
+                                                                                              return
+                                                                                  over    
+                                                                      over
+                                                          over
+                                              over
+                                  DFS(1,6,3)
+                                  ans[3]=3
+                                  sum=6+3
+                                              DFS(1,9,4)
+                                              !9<target
+                                                          DFS(2,9,4)
+                                                          !9<target
+                                                                      DFS(3,9,4)
+                                                                      !9<target
+                                                                                  DFS(4,9,4)
+                                                                                  4===len
+                                                                                  return    
+                                                                      over
+                                                          over
+                                              over
+                                  over  
+                      DFS(1,4,2)
+                      ans[2]=3
+                      sum=4+3
+                                  DFS(1,7,3)
+                                  !7<target
+                                              DFS(2,7,3)
+                                              !7<target                
+                                                          DFS(3,7,3)
+                                                          !7<target   
+                                                                      DFS(4,7,3)
+                                                                      4===len
+                                                                      res.push([2,2,3])
+                                                                      return
+  ...                                                                    
+  ```
+
+  
+
+---
+
 #### DP
 
 * dp[0]的情况
@@ -234,6 +482,13 @@ var removeElement = function(nums, val) {
 
 #### js 特性
 
+* Math.floor
+
+  ```js
+  let n=9
+  Math.floor(n/2) // 4;注意 9/2=4.5
+  ```
+
 * map
 
   [451. 根据字符出现频率排序](https://github.com/Hanqing1996/Leetcode/blob/master/js/451.%20%E6%A0%B9%E6%8D%AE%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0%E9%A2%91%E7%8E%87%E6%8E%92%E5%BA%8F%E3%80%90js-Map%E3%80%91)
@@ -250,6 +505,8 @@ var removeElement = function(nums, val) {
 
   [71. 简化路径](https://github.com/Hanqing1996/Leetcode/blob/master/js/71.%20%E7%AE%80%E5%8C%96%E8%B7%AF%E5%BE%84%E3%80%90js-split%2C%E6%A0%88%E3%80%91.js)
 
+  []()
+
 * 【数组，字符串】indexOf
 
   [316. 去除重复字母](https://github.com/Hanqing1996/Leetcode/blob/master/js/316.%20%E5%8E%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E5%AD%97%E6%AF%8D%E3%80%90%E6%A0%88%E3%80%91.js)
@@ -257,6 +514,8 @@ var removeElement = function(nums, val) {
 * sort
 
   [56. 合并区间](https://github.com/Hanqing1996/Leetcode/blob/master/js/56.%20%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4%E3%80%90js-sort%E3%80%91.js)
+
+  [179. 最大数](https://github.com/Hanqing1996/Leetcode/blob/master/js/179.%20%E6%9C%80%E5%A4%A7%E6%95%B0%E3%80%90%E5%AD%97%E7%AC%A6%E4%B8%B2-%E6%8E%92%E5%BA%8F%E3%80%91.js)
 
 ---
 
@@ -302,6 +561,8 @@ queen.shift() // [3]
 * [225. 用队列实现栈](https://github.com/Hanqing1996/Leetcode/blob/master/js/225.%20%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88%E3%80%90%E9%98%9F%E5%88%97%E3%80%91.js)
 
 * [232. 用栈实现队列](https://github.com/Hanqing1996/Leetcode/blob/master/js/232.%20%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97%E3%80%90%E9%98%9F%E5%88%97%E3%80%91.js)
+* [622. 设计循环队列](https://github.com/Hanqing1996/Leetcode/blob/master/js/622.%20%E8%AE%BE%E8%AE%A1%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E3%80%90%E9%98%9F%E5%88%97%E3%80%91.js)
+* [641. 设计循环双端队列](https://github.com/Hanqing1996/Leetcode/blob/master/js/641.%20%E8%AE%BE%E8%AE%A1%E5%BE%AA%E7%8E%AF%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97%E3%80%90%E9%98%9F%E5%88%97%E3%80%91.js)
 
 ---
 
@@ -311,9 +572,103 @@ queen.shift() // [3]
 
 * [341. 扁平化嵌套列表迭代器](https://github.com/Hanqing1996/Leetcode/blob/master/js/341.%20%E6%89%81%E5%B9%B3%E5%8C%96%E5%B5%8C%E5%A5%97%E5%88%97%E8%A1%A8%E8%BF%AD%E4%BB%A3%E5%99%A8%E3%80%90%E8%AE%BE%E8%AE%A1%E3%80%91.js)
 
-* 
-
 ---
 
 #### 贪心
+
+> 或者说是决策思维（比如数组出现最多/数值最小的元素，怎样才能符合题意处理之类）更好
+
+> 大多数需要去模拟问题的解决流程(分饼干之类),"模拟"的过程也是难点之一
+
+* [621. 任务调度器](https://github.com/Hanqing1996/Leetcode/blob/master/js/621.%20%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%99%A8%E3%80%90%E8%B4%AA%E5%BF%83%E3%80%91.js)
+
+  > 关注数组中出现最多的元素
+
+* [767. 重构字符串](https://github.com/Hanqing1996/Leetcode/blob/master/js/767.%20%E9%87%8D%E6%9E%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%90%E8%B4%AA%E5%BF%83%E3%80%91.js)
+
+* [1296. 划分数组为连续数字的集合](https://github.com/Hanqing1996/Leetcode/blob/master/js/1296.%20%E5%88%92%E5%88%86%E6%95%B0%E7%BB%84%E4%B8%BA%E8%BF%9E%E7%BB%AD%E6%95%B0%E5%AD%97%E7%9A%84%E9%9B%86%E5%90%88%E3%80%90%E8%B4%AA%E5%BF%83%E3%80%91.js)
+
+  > 关注数组中值最小的元素
+
+* [12. 整数转罗马数字](https://github.com/Hanqing1996/Leetcode/blob/master/js/12.%20%E6%95%B4%E6%95%B0%E8%BD%AC%E7%BD%97%E9%A9%AC%E6%95%B0%E5%AD%97%E3%80%90%E8%B4%AA%E5%BF%83%E3%80%91.js)
+
+  > 先处理500/50/5，再处理100/10/1
+
+* [455. 分发饼干](https://github.com/Hanqing1996/Leetcode/blob/master/js/455.%20%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2%E3%80%90%E8%B4%AA%E5%BF%83%E3%80%91.js)
+
+  > 重点在于模拟分饼干的过程
+
+---
+
+#### TODO
+
+#### [44. 通配符匹配](https://leetcode-cn.com/problems/wildcard-matching/)
+
+#### [10. 正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/)
+
+---
+
+#### 字符串
+
+* [剑指 Offer 05. 替换空格【正则】](https://github.com/Hanqing1996/Leetcode/blob/master/js/%E5%89%91%E6%8C%87%20Offer%2005.%20%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC%E3%80%90%E6%AD%A3%E5%88%99%E3%80%91.js)
+* [58. 最后一个单词的长度【split-正则】](https://github.com/Hanqing1996/Leetcode/blob/master/js/58.%20%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E9%95%BF%E5%BA%A6%E3%80%90split-%E6%AD%A3%E5%88%99%E3%80%91.js)
+* [179. 最大数](https://github.com/Hanqing1996/Leetcode/blob/master/js/179.%20%E6%9C%80%E5%A4%A7%E6%95%B0%E3%80%90%E5%AD%97%E7%AC%A6%E4%B8%B2-%E6%8E%92%E5%BA%8F%E3%80%91.js)
+
+* [415. 字符串相加](https://github.com/Hanqing1996/Leetcode/blob/master/js/415.%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%8A%A0.js)
+
+题目不许用 parseInt
+
+```js
+/**
+ * @param {string} num1
+ * @param {string} num2
+ * @return {string}
+ */
+var addStrings = function(num1, num2) {
+    let i=num1.length-1
+    let j=num2.length-1
+    let carry=0
+    let ans=[]
+
+    while(i>=0||j>=0||carry!=0){
+        i>=0&&(carry+=(num1[i--]-'0'))
+        j>=0&&(carry+=(num2[j--]-'0'))
+        ans.push(carry%10)
+        carry=Math.floor(carry/10)
+    }
+    return ans.reverse().join("") 
+};
+```
+
+---
+
+#### 链表
+
+* [剑指 Offer 06. 从尾到头打印链表](https://github.com/Hanqing1996/Leetcode/blob/master/js/%E5%89%91%E6%8C%87%20Offer%2006.%20%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8%E3%80%90%E9%93%BE%E8%A1%A8%E3%80%91.js)
+
+  ```js
+  var reversePrint = function(head) {
+      let ans=[]
+      let current=head
+      // 遍历链表
+      while(current){
+          ans.unshift(current.val)
+          current=current.next
+      }
+      return ans
+  };
+  ```
+
+* [剑指 Offer 18. 删除链表的节点](https://github.com/Hanqing1996/Leetcode/blob/master/js/%E5%89%91%E6%8C%87%20Offer%2018.%20%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9%E3%80%90%E9%93%BE%E8%A1%A8%E3%80%91.js)
+
+* [剑指 Offer 22. 链表中倒数第k个节点【双指针】](https://github.com/Hanqing1996/Leetcode/blob/master/js/%E5%89%91%E6%8C%87%20Offer%2022.%20%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACk%E4%B8%AA%E8%8A%82%E7%82%B9%E3%80%90%E9%93%BE%E8%A1%A8-%E5%8F%8C%E6%8C%87%E9%92%88%E3%80%91.js)
+
+* [剑指 Offer 24. 反转链表](https://github.com/Hanqing1996/Leetcode/blob/master/js/%E5%89%91%E6%8C%87%20Offer%2024.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8%E3%80%90%E9%93%BE%E8%A1%A8%E3%80%91.js)
+
+---
+
+#### codeTop
+
+* 179
+* 
 
