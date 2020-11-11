@@ -1,5 +1,3 @@
-
-
 #### 回溯
 
 * [46. 全排列](https://github.com/Hanqing1996/Leetcode/blob/master/js/46.%20%E5%85%A8%E6%8E%92%E5%88%97%E3%80%90%E5%9B%9E%E6%BA%AF%E3%80%91.js)
@@ -513,9 +511,33 @@ var removeElement = function(nums, val) {
 
 * sort
 
+  [1356. 根据数字二进制下 1 的数目排序](https://github.com/Hanqing1996/Leetcode/blob/master/js/1356.%20%E6%A0%B9%E6%8D%AE%E6%95%B0%E5%AD%97%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%8B%201%20%E7%9A%84%E6%95%B0%E7%9B%AE%E6%8E%92%E5%BA%8F%E3%80%90js-sort%E3%80%91.js)
+
+  ```js
+  arr.sort([compareFunction])
+  ```
+
+  - 如果 `compareFunction(a, b)` 小于 0 ，那么 a 会被排列到 b 之前；
+
+  - 如果 `compareFunction(a, b)` 等于 0 ， a 和 b 的相对位置不变。备注： ECMAScript 标准并不保证这一行为，而且也不是所有浏览器都会遵守（例如 Mozilla 在 2003 年之前的版本）；
+
+  - 如果 `compareFunction(a, b)` 大于 0 ， b 会被排列到 a 之前。
+
   [56. 合并区间](https://github.com/Hanqing1996/Leetcode/blob/master/js/56.%20%E5%90%88%E5%B9%B6%E5%8C%BA%E9%97%B4%E3%80%90js-sort%E3%80%91.js)
 
   [179. 最大数](https://github.com/Hanqing1996/Leetcode/blob/master/js/179.%20%E6%9C%80%E5%A4%A7%E6%95%B0%E3%80%90%E5%AD%97%E7%AC%A6%E4%B8%B2-%E6%8E%92%E5%BA%8F%E3%80%91.js)
+
+* toString 
+
+  * 十进制转二进制
+
+    ```js
+    let num=8
+    let bin=num.toString(2) // 8 的二进制表达为 1000
+    let numOfOne=bin.split('1') // 计算二进制表达式中1的个数
+    ```
+
+    
 
 ---
 
@@ -665,10 +687,13 @@ var addStrings = function(num1, num2) {
 
 * [剑指 Offer 24. 反转链表](https://github.com/Hanqing1996/Leetcode/blob/master/js/%E5%89%91%E6%8C%87%20Offer%2024.%20%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8%E3%80%90%E9%93%BE%E8%A1%A8%E3%80%91.js)
 
+* [剑指 Offer 35. 复杂链表的复制【深度拷贝链表】](https://github.com/Hanqing1996/Leetcode/blob/master/js/%E5%89%91%E6%8C%87%20Offer%2035.%20%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6%E3%80%90%E9%93%BE%E8%A1%A8-%E6%B7%B1%E5%BA%A6%E6%8B%B7%E8%B4%9D%E9%93%BE%E8%A1%A8%E3%80%91.js)
+
+* [剑指 Offer 52. 两个链表的第一个公共节点](https://github.com/Hanqing1996/Leetcode/blob/master/js/%E5%89%91%E6%8C%87%20Offer%2052.%20%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%85%AC%E5%85%B1%E8%8A%82%E7%82%B9%E3%80%90%E9%93%BE%E8%A1%A8-%E7%9B%B8%E4%BA%A4%E3%80%91.js)
+
 ---
 
 #### codeTop
 
 * 179
 * 
-
