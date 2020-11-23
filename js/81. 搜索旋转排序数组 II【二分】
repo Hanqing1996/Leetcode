@@ -1,0 +1,64 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {boolean}
+ */
+var search = function(nums, target) {
+    let low=0,high=nums.length-1,mid
+    while(low<=high){
+        mid=Math.floor((low+high)/2)
+        if(nums[mid]===target)
+            return true
+        // target 小于nums[mid]    
+        if(target<nums[mid]){
+            // mid 已经处于旋转数组中,说明 target 肯定在 mid 左边。比如[...2...6],target=1 
+            if(nums[mid]<nums[high]){
+                high=mid-1
+                console.log(`high:${high}`)
+            }
+            // 旋转数组在 mid 之后,说明 target 肯定在 mid 右边。
+            else if(nums[mid]>nums[high]){
+
+                if(target<nums[high]){
+                    // [...6...2],target=1
+                    low=mid+1
+                }else if(target>nums[high]){
+                    // [...6...2],target=3
+                    high=mid-1
+                }else{
+                    return true
+                }
+            }
+            // mid 在旋转数组中 or 旋转数组在 mid 之后。比如[...6...6],target=2,这里数组可能是[6,6,6,2,6]也可能是[6,2,6,6,6]
+            else{
+                high=high-1
+            }
+        }
+        else{
+            if(nums[mid]<nums[high]){
+
+                // [...2...6],target=3
+                if(target<nums[high]){
+                    low=mid+1
+                }
+                // [...2...6],target=9
+                else if(target>nums[high]){
+                    high=mid-1
+                }
+                else{
+                    return true
+                }
+            }
+            else if(nums[mid]>nums[high]){
+
+                // [...6...2],target=9
+                low=mid+1
+            }
+            else{
+                // [...6...6],target=9,可能是 [6,6,6,9,6],也可能是 [6,9,6,6,6]
+                high=high-1
+            }
+        }
+    }
+    return false
+};
