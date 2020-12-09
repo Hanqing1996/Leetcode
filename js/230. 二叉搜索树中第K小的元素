@@ -1,0 +1,56 @@
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {number} k
+ * @return {number}
+ */
+/**
+ * 二叉搜索树：
+ * 若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值； 若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值； 它的左、右子树也分别为二叉排序树。
+ * 
+ * 二叉搜索树的中序遍历结果是一个递增数组
+ * 因此中序遍历得到的第k个数就是所求第k个最小元素
+ */
+var kthSmallest = function(root, k) {
+    let count=0
+    let res=-1
+    const traverse=function(root){
+        if(res>0)
+            return
+        if(root===null)
+            return null
+        const leftTree=root.left
+        const rightTree=root.right
+        // 左
+        if(leftTree!==null){
+            traverse(leftTree)
+        }
+        count++
+        if(count===k){
+            res=root.val
+            return
+        }
+
+        // 右
+        if(rightTree!==null){
+            traverse(rightTree)
+        }
+        return
+    }
+    traverse(root)
+    return res
+
+
+};
+
+
+
+
+
