@@ -23,9 +23,9 @@ console.log(res)
 // 原地, 时间复杂度 O(m+n),空间复杂度 O(1)，从后往前
 function combine(arr1,arr2){
 
-    let m=arr1.length,n=arr2.length
     m--
     n--
+    let m=arr1.length,n=arr2.length
     let position=m+n-1
     while(m>0&&n>0){
         if(arr1[m]>=arr2[n]){
