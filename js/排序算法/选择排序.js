@@ -13,20 +13,20 @@ function swap(a,b,arr){
 }
 
 function selectionSort(arr){
-    let start=0,end=arr.length-1
+    let side=0,end=arr.length-1
 
     let minIndex=0
-    while(start<end){
+    while(side<end){
         // 在无序数组中找最小值
-        // 无序数组查找范围：start+1->end
-        for(let i=start+1;i<=end;i++){
+        // 无序数组查找范围：side->end
+        for(let i=side;i<=end;i++){
             if(arr[i]<arr[minIndex]){
                 minIndex=i
             }
         }
-        swap(start,minIndex,arr)
-        // start 也是有序数组的终点位置
-        start++
+        swap(side,minIndex,arr)
+        // side 也是有序数组的终点位置
+        side++
     }
     return arr
 }
