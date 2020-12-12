@@ -18,49 +18,42 @@
  * @return {TreeNode}
  */
 var sortedListToBST = function(head) {
-
-    if(head===null)
+    if(head==null)
         return null
 
     const traverse=function(head){
-        let slow=head
-        let quick=head
+        // 查找链表中点
+        let quick=head,slow=head
         let pre
-        // slow 走一步,quick 走两步
-        while(quick!=null&&quick.next!=null){
+        while(quick&&quick.next&&slow){
             pre=slow
             slow=slow.next
             quick=quick.next.next
         }
-        // slow 现在指向链表中间位置,pre.next 是 slow
+
+        // slow 现在指向链表中间位置,pre.next 指向 slow 前一个节点
         /**
          * 比如 1 2 3 4 5
          * slow 指向 3,pre 指向 2
          */
-
-        let root=new TreeNode(slow.val)
-
-        // 右链
-        let rightPoint=slow.next
-
+        let rootValue=slow.val
+        let root=new TreeNode(rootValue)
         
 
-        if(pre!=null){
-            // 左链 
-            let leftPoint=head
-            pre.next=null
-            root.left=traverse(leftPoint)
+
+        // 有可能 head 链表只有两个节点，此时第一个节点就是中间节点，换而言之，此时链表对应节点没有左子树
+        if(pre){
+            // 左链
+            pre.next=null // 只是把 pre.next（一个指向堆内存的地址值）修改为 null 而已
+            let left=head
+            root.left=left==null?left:traverse(left)
+
         }
 
-        
-
-        
-        root.right=rightPoint===null?null:traverse(rightPoint)
+        // 右链
+        let right=slow.next
+        root.right=right==null?right:traverse(right)
         return root
     }
     return traverse(head)
 };
-
-
-
-
