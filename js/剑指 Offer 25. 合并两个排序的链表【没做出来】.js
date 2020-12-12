@@ -1,8 +1,8 @@
 /**
  * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
  * }
  */
 /**
@@ -10,28 +10,27 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
+
+// 不要把 l2 合并到 l1 中，用新链表
 var mergeTwoLists = function(l1, l2) {
-    let current=new ListNode()
-    let dummy=current
+    let headNode=new ListNode()
+    let pre=headNode
 
-    if(!l1&&!l2)
-        return dummy.next
-
-    while(l1||l2){
-        if(!l1){
-            current.next=l2
-            return dummy.next
-        }else if(!l2){
-            current.next=l1
-            return dummy.next            
-        }
-        if(l1.val<=l2.val){
-            current.next=l1
+    while(l1&&l2){
+        if(l1.val<l2.val){
+            pre.next=l1
             l1=l1.next
         }else{
-            current.next=l2
+            pre.next=l2
             l2=l2.next
         }
-        current=current.next
+        pre=pre.next
     }
+
+    // 收尾工作
+    if(l1)
+        pre.next=l1
+    if(l2)
+        pre.next=l2 
+    return headNode.next       
 };
