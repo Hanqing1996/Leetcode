@@ -1,3 +1,6 @@
+
+const arr = [30, 32, 6, 24, 37, 32, 45, 21, 38, 23, 47];
+
 function swap(a,b,arr){
     let temp=arr[a]
     arr[a]=arr[b]
@@ -5,21 +8,24 @@ function swap(a,b,arr){
 }
 
 
-// 冒泡排序
 function bubbleSort(arr){
-    for(let i=0;i<arr.length;i++){
-        // 第一次排序后，最后一个元素就不需要比较了(一定是最大数，位置无需再变动)
-        // j相当于从位置1开始遍历当前无序数组
+    for(let i=0;i<arr.length-1;i++){
+
+        let isSorted=true
         for(let j=1;j<arr.length-i;j++){
-            let pre=arr[j-1]
             let current=arr[j]
-            // 比较相邻两个元素大小
-            if(pre>current)
+            let pre=arr[j-1]
+            if(current<pre){
                 swap(j,j-1,arr)
+                isSorted=false
+            }
         }
+        // isSorted 用于标识此趟扫描过程中是否发生相邻元素的交换，若没有则说明数组已经有序，不必进行下趟扫描（但本趟是必要的，用于检测 isSorted）
+        if(isSorted)
+            return arr
     }
 }
 
-const arr=[5,6,3,1,8,7,2,4]
-bubbleSort(arr)
-console.log(arr)
+
+let res=bubbleSort(arr)
+console.log(res)
