@@ -14,9 +14,9 @@ var multiply = function(num1, num2) {
         for(let j=len2-1;j>=0;j--){
             index1=i+j
             index2=i+j+1
-            let mul=num1[i]*num2[j]+(ans[index2]|0)
+            let mul=num1[i]*num2[j]
             ans[index1]=Math.floor(mul/10)+(ans[index1]|0)
-            ans[index2]=mul%10
+            ans[index2]=(mul+(ans[index2]|0)) %10
         }
     }
     let result= ans.join('').replace(/^0+/,'')
