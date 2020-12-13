@@ -16,6 +16,7 @@ var hasPathSum = function(root, sum) {
     if(!root)
         return false
     let hasPath=false
+    // preSum 为之前路径(以root为终点)的节点和
     const traverse=function(root,preSum,ifLeaf){
         // 已经找到路径，提前结束查找
         if(hasPath){
