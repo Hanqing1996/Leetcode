@@ -12,25 +12,26 @@ function swap(a,b,arr){
     arr[b]=temp
 }
 
-function selectionSort(arr){
-    let side=0,end=arr.length-1
 
-    let minIndex=0
-    while(side<end){
-        // 在无序数组中找最小值
-        // 无序数组查找范围：side->end
-        for(let i=side;i<=end;i++){
+function selectionSort(arr){
+    let len=arr.length
+    let side=0
+    while(side<len){
+        let minIndex=side
+        for(let i=side;i<len;i++){
             if(arr[i]<arr[minIndex]){
                 minIndex=i
             }
         }
-        swap(side,minIndex,arr)
-        // side 也是有序数组的终点位置
+        if(minIndex!==side){
+            swap(minIndex,side,arr)
+        }
         side++
     }
     return arr
 }
 
-let arr=[5,6,3,8,7,2,4]
-let res=selectionSort(arr)
+let example=[12, 5, 13, 14, 11]
+let res=selectionSort(example)
 console.log(res)
+
