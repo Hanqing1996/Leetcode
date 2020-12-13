@@ -33,6 +33,7 @@ var hasPathSum = function(root, sum) {
         // 需要判断当前节点是不是叶节点
         ifLeaf=!(root.left||root.right)
             
+        // 这里的思路和回溯很像，只是回溯需要for循环遍历，这里只要遍历 left 和 right 两个分支
         traverse(root.left,preSum+root.val,ifLeaf)
         traverse(root.right,preSum+root.val,ifLeaf)
     }
