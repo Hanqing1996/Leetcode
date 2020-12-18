@@ -2,6 +2,9 @@
  * @param {string} s
  * @return {number}
  */
+
+
+// abcaqwerty,对于 abc 而言，它舍弃掉第一项'a',才能接受后面的'aqwerty' ,获得更大的长度
 var lengthOfLongestSubstring = function(s) {
     let queue=[]
     let len=s.length
@@ -15,7 +18,6 @@ var lengthOfLongestSubstring = function(s) {
         // 新元素是一定会被添加到 queue 中的
         queue.push(s[i])
         if(repeatIndex<0)
-            // 我们要做的只是记录 queue 变化过程中曾达到的最大长度
             maxLen=Math.max(queue.length,maxLen)
         else
             queue=queue.slice(repeatIndex+1)
