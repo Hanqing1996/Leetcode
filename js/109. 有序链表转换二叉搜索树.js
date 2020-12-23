@@ -25,6 +25,7 @@ var sortedListToBST = function(head) {
         // 查找链表中点
         let quick=head,slow=head
         let pre
+        // 这里的 while 条件也可以是 quick.next&&quick.next.next，只是[-10, -3, 0|, 5, 9]和[-10, -3|, 0, 5, 9]的区别而已
         while(quick&&quick.next&&slow){
             pre=slow
             slow=slow.next
