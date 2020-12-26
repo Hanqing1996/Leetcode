@@ -1,56 +1,44 @@
-
 function swap(a,b,arr){
-    let temp=arr[a]
-    arr[a]=arr[b]
-    arr[b]=temp
+    arr[a]+=arr[b]
+    arr[b]=arr[a]-arr[b]
+    arr[a]=arr[a]-arr[b]
 }
 
 function heapSort(arr){
-
-    arr=[,...arr]
-
-    // 建立一个大顶堆
-    buildHeap(arr)
-
-    console.log(arr)
-
-    let len=arr.length-1
-
-    let result=[]
-
-    // 总共要取len个元素放入 result
-    for(let i=0;i<len;i++){
-        swap(1,len-i,arr)
-        result.unshift(arr.pop())
-        buildHeap(arr)
+    let res=[]
+    let heap=[,...arr]
+    let len=arr.length
+    while(len>0){
+        // 构造大顶堆
+        buildHeap(heap,len)
+        // 将当前最大元素放入 res
+        res.unshift(heap[1])
+        swap(1,len,heap)
+        len--
     }
-    return result
+    return res
 }
 
-function buildHeap(arr){
-    let heapSize=arr.length-1
-    for(let i=Math.floor(heapSize/2);i>=1;i--){
-        heapifyBig(i,arr,heapSize)
+function buildHeap(heap,len){
+    for(let i=Math.floor(len/2);i>=1;i--){
+        adjustHeap(heap,i,len)
     }
 }
 
-function heapifyBig(i,arr,heapSize){
+function adjustHeap(heap,i,len){
     while(true){
         let maxIndex=i
-        if(i*2<=heapSize&&arr[i*2]>arr[i]){
+        if(i*2<=len&&heap[i*2]>heap[i])
             maxIndex=i*2
-        }
-        if(i*2+1<=heapSize&&arr[i*2+1]>arr[maxIndex]){
+        if((i*2+1)<=len&&heap[i*2+1]>heap[maxIndex])
             maxIndex=i*2+1
-        }
         if(maxIndex===i)
             break
-        swap(maxIndex,i,arr)
-        i=maxIndex    
+        swap(i,maxIndex,heap)
+        i=maxIndex
     }
 }
 
-
-let example=[12, 5, 13, 14, 11]
-let res=heapSort(example)
+let arr=[4,2,8,3,5,1,6]
+let res=heapSort(arr)
 console.log(res)
