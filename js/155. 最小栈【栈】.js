@@ -1,66 +1,58 @@
 /**
- * 以下做法不满足“在常数时间内检索到最小元素”
+ * initialize your data structure here.
  */
 var MinStack = function() {
     this.stack=[]
+    this.minStorage=[]
 };
 
+/** 
+ * @param {number} x
+ * @return {void}
+ */
 MinStack.prototype.push = function(x) {
     this.stack.push(x)
-};
-
-MinStack.prototype.pop = function() {
-    this.stack.pop()
-};
-
-MinStack.prototype.top = function() {
-    let {length}=this.stack
-    return this.stack[length-1]
-};
-
-MinStack.prototype.getMin = function() {
-    let minValue=this.stack[0]
-    for(let i=1;i<this.stack.length;i++){
-        if(this.stack[i]<minValue){
-            minValue=this.stack[i]
-        }
+    let len=this.minStorage.length
+    if(len===0||this.minStorage[len-1]>=x){
+        this.minStorage.push(x)
     }
-    return minValue
 };
-
 
 /**
- * 以下做法利用辅助栈 helper 保存 stack 当前最小值
+ * @return {void}
  */
-var MinStack = function() {
-    this.stack=[]
-    this.helper=[]
-};
-
-MinStack.prototype.push = function(x) {
-    this.stack.push(x)
-    let {length}=this.helper
-    // 比较 x 与 helper 的栈顶元素
-    if(this.helper.length==0||x<=this.helper[length-1]){
-        this.helper.push(x)
-    }
-};
-
 MinStack.prototype.pop = function() {
-    let last=this.stack.pop()
-    let {length}=this.helper
-    // 如果要出栈的元素正好是 stack 的最小元素，那么 helper 也要将其出栈
-    if(this.helper.length>0&&this.helper[length-1]===last){
-        this.helper.pop()
-    }
+    let topValue=this.top()
+    if(topValue===undefined)
+        return
+    this.stack.pop()
+    if(topValue===this.minStorage[this.minStorage.length-1])
+        this.minStorage.pop()
 };
 
+/**
+ * @return {number}
+ */
 MinStack.prototype.top = function() {
-    let {length}=this.stack
-    return this.stack[length-1]
+    if(this.stack.length===0)
+        return
+    return this.stack[this.stack.length-1]    
 };
 
+/**
+ * @return {number}
+ */
 MinStack.prototype.getMin = function() {
-    return this.helper[this.helper.length-1]
+    if(this.minStorage.length===0)
+        return
+    return this.minStorage[this.minStorage.length-1]
 };
 
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * var obj = new MinStack()
+ * obj.push(x)
+ * obj.pop()
+ * var param_3 = obj.top()
+ * var param_4 = obj.getMin()
+ */
