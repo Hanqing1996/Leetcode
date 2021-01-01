@@ -58,24 +58,24 @@ var maxProfit = function(prices) {
 
 
 /**
- * @param {number[]} prices
- * @return {number}
- */
-/**
- * dp思路2:前i天的最大收益 = max{前i-1天的最大收益，第i天的价格-前i-1天中的最小价格}
+ * dp思路2：dp[i]表示前i+1天所能达到的最大收益
  */
 var maxProfit = function(prices) {
-    // dp[i] 表示前i天的最大收益
+    let len=prices.length
+
     let dp=[]
     dp[0]=0
-    let len=prices.length
-    let minIndex=0
     let res=0
+
+    let minIndex=0,minValue=prices[0]
+
     for(let i=1;i<len;i++){
-        dp[i]=Math.max(dp[i-1],prices[i]-prices[minIndex])
+        dp[i]=(prices[i]-minValue)>0?Math.max(dp[i-1],prices[i]-minValue):dp[i-1]
         res=Math.max(res,dp[i])
-        prices[i]<prices[minIndex]&&(minIndex=i)
+        if(minValue>prices[i]){
+            minIndex=i
+            minValue=prices[i]
+        }
     }
     return res
 };
-
