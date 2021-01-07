@@ -19,3 +19,17 @@ var maxSubArray = function(nums) {
     }
     return res
 };
+
+/**
+ * dp思路2:dp[i] 表示以 nums[i]开始的最大子序和
+ */
+var maxSubArray = function(nums) {
+    let dp=nums
+    let len=nums.length
+    let res=dp[len-1]
+    for(let i=len-1;i>=1;i--){
+        dp[i-1]=nums[i-1]+Math.max(dp[i],0)
+        res=Math.max(dp[i-1],res)
+    }
+    return res
+};
