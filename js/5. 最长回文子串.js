@@ -35,6 +35,10 @@ var longestPalindrome = function(s) {
 
     let dp=Array.from({length:len},()=>Array.from({length:len},()=>false))
     let res=s[0],maxLen=1
+    
+    
+    // [0,1] [0,2],[1,2] [0,3],[1,3],[2,3]...
+    
     for(let i=1;i<len;i++){
         dp[i][i]=true
         for(let j=0;j<i;j++){
