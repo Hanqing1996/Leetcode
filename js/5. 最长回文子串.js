@@ -25,3 +25,27 @@ var longestPalindrome = function(s) {
     }
     return res
 };
+
+
+// dp[j][i] 表示子串 substring(j,i+1)是否为回文子串 
+var longestPalindrome = function(s) {
+    let len=s.length
+    if(len===1)
+        return s[0]
+
+    let dp=Array.from({length:len},()=>Array.from({length:len},()=>false))
+    let res=s[0],maxLen=1
+    for(let i=1;i<len;i++){
+        dp[i][i]=true
+        for(let j=0;j<i;j++){
+            if(s[i]===s[j]&&(i===j+1||dp[j+1][i-1])){
+                dp[j][i]=true
+                if(i-j+1>maxLen){
+                    res=s.substring(j,i+1)
+                    maxLen=i-j+1
+                }
+            }
+        }
+    }
+    return res
+};
