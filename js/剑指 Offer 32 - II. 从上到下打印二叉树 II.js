@@ -13,6 +13,7 @@ var levelOrder = function(root) {
             parent.left&&(queue.push(parent.left),level.push(parent.left.val))
             parent.right&&(queue.push(parent.right),level.push(parent.right.val))
         }
+        // 最后一层（叶节点）,level 为[]
         level.length>0&&res.push(level)
     }
     return res
