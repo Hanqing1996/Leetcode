@@ -2,19 +2,18 @@ var levelOrder = function(root) {
     if(root===null)
         return []
     let queue=[root]
-    let res=[[root.val]]
+    let res=[]
     while(queue.length>0){
         let len=queue.length
 
-        let level=[]
-
+        // queue 目前只存储了上一层的所有节点
+        res.push(queue.slice().map(node=>node.val))
+        
         for(let i=0;i<len;i++){
             let parent=queue.shift()
-            parent.left&&(queue.push(parent.left),level.push(parent.left.val))
-            parent.right&&(queue.push(parent.right),level.push(parent.right.val))
+            parent.left&&(queue.push(parent.left))
+            parent.right&&(queue.push(parent.right))
         }
-        // 最后一层（叶节点）,level 为[]
-        level.length>0&&res.push(level)
     }
     return res
 };
