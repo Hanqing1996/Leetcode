@@ -1,33 +1,17 @@
-/**
- * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
-/**
- * @param {TreeNode} root
- * @return {number}
- */
 var maxDepth = function(root) {
-    if(root==null)
+    if(root===null)
         return 0
-
-    let ans=[]
-    let res=0
+    let res=1
     const traverse=function(root,depth){
-
-        ans[depth]=root.val
-
-        let ifLeaf=!(root.left||root.right)
-        if(ifLeaf&&(depth+1)>res){
-            res=depth+1
+        // 到达叶节点，比较最大深度与当前深度
+        if(!root.left&&!root.right){
+            res=Math.max(res,depth)
+            return
         }
-
+        
         root.left&&traverse(root.left,depth+1)
         root.right&&traverse(root.right,depth+1)
     }
-    traverse(root,0)
+    traverse(root,1)
     return res
 };
