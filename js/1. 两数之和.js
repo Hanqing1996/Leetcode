@@ -4,12 +4,26 @@
  * @return {number[]}
  */
 
-// 题目保证每种输入只会对应一个答案,说明重复元素肯定不会作为返回数组成员
+// 缓存思想，时间复杂度O(n)，空间复杂度O(n)
 var twoSum = function(nums, target) {
     let cache={}
     for(let i=0;i<nums.length;i++){
         if(cache[target-nums[i]]!=undefined)
             return [cache[target-nums[i]],i]
         cache[nums[i]]=i
+    }
+};
+
+
+// 对撞双指针，时间复杂度O(n)，空间复杂度O(1)
+var twoSum = function(nums, target) {
+    let left=0,right=nums.length-1
+    while(left<right){
+        if(nums[left]+nums[right]>target)
+            right--
+        else if(nums[left]+nums[right]<target)
+            left++
+        else
+            return [left,right]
     }
 };
