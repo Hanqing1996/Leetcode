@@ -13,17 +13,3 @@ var twoSum = function(nums, target) {
         cache[nums[i]]=i
     }
 };
-
-
-// 对撞双指针，时间复杂度O(n)，空间复杂度O(1)
-var twoSum = function(nums, target) {
-    let left=0,right=nums.length-1
-    while(left<right){
-        if(nums[left]+nums[right]>target)
-            right--
-        else if(nums[left]+nums[right]<target)
-            left++
-        else
-            return [left,right]
-    }
-};
