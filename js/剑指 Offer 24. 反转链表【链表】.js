@@ -33,3 +33,27 @@ var reverseList = function(head) {
     }
     return head
 };
+
+// 递归
+var reverseList = function(head) {
+    if(!head)
+        return head
+
+    let res=null
+    const traverse=function(current,head){
+        if(!current.next){
+            res=head
+            return
+        }
+
+        let toInsert=current.next
+        current.next=toInsert.next
+
+        toInsert.next=head
+        head=toInsert
+
+        traverse(current,head)
+    }
+    traverse(head,head)
+    return res
+};
