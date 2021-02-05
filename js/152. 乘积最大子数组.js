@@ -24,3 +24,24 @@ var maxProduct = function(nums) {
     }
     return MAX
 };
+
+
+// 简化版
+var maxProduct = function(nums) {
+
+
+    let len=nums.length
+    let minValue=1,maxValue=1
+    let res=nums[0]
+    for(let i=0;i<len;i++){
+        if(nums[i]<0){
+            ;[minValue,maxValue]=[maxValue,minValue]
+        }
+        minValue=Math.min(minValue*nums[i],nums[i])
+        maxValue=Math.max(maxValue*nums[i],nums[i])
+
+        res=Math.max(res,maxValue)
+    }
+    return res
+
+};
