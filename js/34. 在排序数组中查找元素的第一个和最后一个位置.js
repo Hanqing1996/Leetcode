@@ -12,7 +12,10 @@ var searchRange = function(nums, target) {
         else
             right=mid
     }
-    res[0]=left
+    res[0]=nums[left]===target?left:-1
+
+    if(res[0]===-1)
+        return [-1,-1]
 
     // 再找右边界
     let current=left
@@ -21,5 +24,3 @@ var searchRange = function(nums, target) {
     res[1]=current-1
     return res
 };
-
-
